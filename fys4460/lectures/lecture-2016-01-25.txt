@@ -1,0 +1,22 @@
+First lecture//Mo.Jan.25-2016//FYS4460--Disorder and Percolation Theory
+
+Atomic scale / Molecular Dynamics      
+------------                    
+Project 1 (4 weeks), MD
+    * Book: Frenkel&Smit.
+Project 2 (3-4 weeks), MD->nanoporous system
+    * (100 nm)^3 nanoporous cube.
+    * Can experimentally see sizeorders of 7 nm to 70 nm.
+    
+Upscaling / large scale
+-----------------------
+Project 3 (see fig. 1 in notebook)
+    * 6 weeks.
+Project 4
+    * 2 weeks.
+
+Atomic
+------
+* Argon - "model system"
+    * \rho(V,N,T)
+* Fig. 2 in notebook

@@ -1,0 +1,70 @@
+Second in Lecture in FYS4460
+----------------------------
+
+We will assume that we have a purely classical system.
+
+General Moldecular Dynamics Algorithm
+-------------------------------------
+FIG1:
+                       Simulator
+state(0) --->  state(t) ---> state(t+dt) ---> state(T)
+               ^                       |
+               |_________N times_______|
+
+{\vec r_i, \vec v_i}(0)                               {\vec r_i, \vec v_i}(t)
+
+If you "dump" some time values t_1, t_2, ...
+we can get higher resolution if we re-simulate from
+(f.ex.) t_1 to t_2 and obtain more time values.
+
+Generating an Initial State
+---------------------------
+
+    * We're going to model an Argon gas, liquid or solid.
+    * A solid will be in equilibrium as "face-centered cubic (fcc)", see FIG2.
+        - Four atoms per cube, with coordinates 
+        (relative to unit cube with length b)
+            * atom 1: (0, 0, 0)
+            * atom 2: (1/2b, 1/2b, 0)
+            * atom 3: (1/2b, 0, 1/2b)
+            * atom 4: (0, 1/2b, 1/2b)
+    * Generate FCC latice:
+        * System of V = L*L*L
+        * Boxes of size b*b*b
+        * N = 4*(L/b)^3
+        * \rho = N/V = 4/b^3
+        * M_x is the number of boxes per side, M_x = L/b
+        * K = \sum{1/2 m \vec v_i^2} = 3/2 NkT
+        * \vec v = v_x ~ Normal(average=0, std=\alpha\sqrt{T})
+                   v_y ~ Normal(average=0, std=\alpha\sqrt{T}) 
+                   v_z ~ Normal(average=0, std=\alpha\sqrt{T})
+
+CODE1
+------------------------------------------------------
+
+        ux = array([1,0,0])*b;
+        uy = array([0,1,0])*b;
+        uz = array([0,0,1])*b;
+        num = -1;
+
+        for ix in range(Mx):
+            for iy in range(My):
+                for iz in range(Mz):
+                    origin = ix*ux + iy*uy + iz*uz
+                    num += 1;
+                    r[num] = origin;
+                    num += 1;
+                    r[num] = origin + ux*b/2 + uy*b/2;
+                    num += 1;
+                    r[num] = origin + ux*b/2 + uy*b/2;
+                    num += 1;
+                    r[num] = origin + ux*b/2 + uz*b/2;
+                    num += 1;
+                    r[num] = origin + uy*b/2 + uz*b/2;
+
+------------------------------------------------------
+
+Periodic Boundary Conditions, Potential and Force calculations
+--------------------------------------------------------------
+
+See FIG3 in notes for explanation and more notes!!!

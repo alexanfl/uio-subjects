@@ -1,0 +1,145 @@
+\documentclass[12pt]{article}
+\usepackage[norsk]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+\usepackage{mathtools} 		% Adds the declare paired 
+							% delimeter command to make costom \abs and \norm
+\usepackage{breqn}		 	% Adds dmath environment for automated brakeline
+\usepackage{xfrac}			% Adds slanted fractions (sfrac)
+\usepackage{cancel}			% Adds the cancel command, a slash through the symbol(s)
+\usepackage{tabularx}		% Adds adjustable width on tabulars
+\usepackage{cuted}			% Adds the strip command, pagewidth text in a twocolumn
+							% environment.  
+\usepackage{hyperref}
+\usepackage{parskip}		% Norske avsnitt
+\usepackage{siunitx}		% SI-enheter
+\usepackage{tablefootnote}
+\usepackage{tabularx}
+\usepackage{listings}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Alghorithm packages:
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% colored box
+\usepackage[most]{tcolorbox}
+
+% Numbers within section
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+% Start custom \abs \norm 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\newcommand{\equ}[1]{{\small\begin{align*}#1\end{align*}}}
+\newcommand{\ita}[1]{\textit{#1}}
+\newcommand{\ma}[1]{$#1$}
+\newcommand{\eq}[1]{{\small\begin{align}#1\end{align}}}
+\newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
+\renewcommand\vec[1]{\mathbf{#1}}
+\newcommand{\OP}[1]{\mathbf{\widehat{#1}}}
+\newcommand{\op}[1]{\hat{#1}}
+\newcommand{\unit}[1]{\mathbf{\hat{#1}}}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\tcbset{width=\textwidth,colback=lime!25!white,colframe=green!40!black,
+arc=0pt,outer arc=0pt}
+\section{Eksamen 2014}
+\begin{tcolorbox}[title = Kinematikk]
+  En fjærbevegelse beskrives med ligningen 
+  \eq{\ddot z + (b/m)\dot z + (k/m)z = 0} 
+  der $z$ avhenger av tiden.
+  
+  Den utledes ved å se på Hooks lov $F_H = -kz$, og et friksjonsledd
+  $F_f = -b\dot z$, som er avhengig av hastigheten og en konstant.
+  Når man ser dette i sammenheng med N2L, får vi ligning 1.1.
+  \tcbline
+  I en svingeligning må vi ha med det første og siste leddet i 1.1.
+  Fordi det midterste leddet bare bestemmer dempingen.
+  \tcbline
+  Det finnes tre kategorier av løsninger for 1.1
+  \eq{z = A e^{\alpha t}}
+  der
+  \eq{\alpha = -\gamma \pm \sqrt{\gamma^2 - \omega^2}}
+  
+  Overkritisk demping: $\gamma > \omega$
+  
+  Kritisk demping: $\gamma = \omega$
+  
+  Underkritisk demping: $\gamma < \omega$
+  
+  For kritisk demping blir løsningen
+  
+  \eq{z = Ae^{-\gamma t} + Bte^{-\gamma t}}
+  \tcbline
+  For en ytre, tidsvariabel kraft som påvirker systemet vårt,
+  har vi en \ita{faseresonansfrekvens}
+  \eq{f_0 = \frac{\omega}{2\pi}}
+  
+  Dette er frekvensen systemet ville svingt med uten friksjvinon ($b=0$).
+  \tcbline
+  Siden systemet vårt etterhvert vil svinge med frekvensen til den ytre kraften,
+  ville vi ikke kunne se spor av de tre kateogoriene av løsninger ovenfor.
+  
+  Derimot vil vi kunne se slike karakteristikker hvis vi varierer frekvensen
+  og beregner \ma Q-faktoren, eller ser på systemet like etter at den påtrykte kraften 
+  er satt i gang.
+\end{tcolorbox}
+
+\tcbset{width=\textwidth,colback=cyan!25!white,colframe=cyan!75!black,
+arc=0pt,outer arc=0pt}
+\begin{tcolorbox}[title = Lys gjennom glassprisme]
+  Hvis vi sender lys fra luft inn i et glassprisme (se figur \ref{fig:1a}), 
+  der lyset har polarisasjon vinkelrett på
+  overflaten, vil deler av lyset bli transmitert 
+  og resten reflektert (se figur \ref{fig:1b}).
+  Innfallsvinkelen $\theta_i$ er vinkelen mellom innfallslodd (vinkelrett på overflaten)
+  og strålen. Denne er lik refleksjonsvinkelen $\theta_r$.
+  Fra Snels lov har vi da
+  \eq{n_t \theta_t = n_i \theta_i}
+  der $n_i$ og $n_t$ er brytningsindeksen til hhv. luft og glass.
+  \tcbline
+  Når lyset går gjennom glasset vil glassatomene bli påvirket av et
+  elektrisk felt, slik at elektronene oscillerer om atomkjernen.
+  det gir en netto polarisering som genererer en ny bølge som brer seg i samme retning
+  (se figur \ref{fig:1c}).
+  
+  Summen av de to bølgene gjør at lysbølgen går saktere enn gjennom vakuum.
+  Den relative elektriske permitiviteten $\epsilon_r$ forteller hvor
+  lett et materiale polariseres. Lyshastigheten gis dermed som
+  \eq{c_{glass} = \frac{c_0}{\epsilon_{r,\;glass}}}
+  
+  Merk at når vi snakker om polarisering av mediet, er det i en annen betydning av ordet
+polarisering enn når vi angir retningen på det elektriske feltet i en elektromagnetisk bølge.
+\tcbline
+
+\end{tcolorbox}
+
+\begin{figure}[h!]
+  \caption{}
+  \begin{subfigure}[b]{0.5\textwidth}
+  	\includegraphics[width=60mm]{bilder-eksamener/lys1.png}
+  	\caption{Lys mot glassprisme}\label{fig:1a}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.5\textwidth}
+  	\includegraphics[width=60mm]{bilder-eksamener/lys2.png}
+  	  	\caption{Refleksjon og transmisjon}\label{fig:1b}
+  \end{subfigure}\\
+    \begin{subfigure}[b]{\textwidth}
+  	\includegraphics[width=\textwidth]{bilder-eksamener/lys3.png}
+  	  	\caption{Polarisering av atomer når en elektromagnetisk bølge passerer (pga det elektriske
+feltet i bølgen).}\label{fig:1c}
+  \end{subfigure}  
+\end{figure}
+
+
+
+\end{document}

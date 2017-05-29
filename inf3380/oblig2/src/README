@@ -1,0 +1,7 @@
+Example of compilation and run of program
+
+mpicc -fopenmp main.c -o main -lm
+mpirun -np <number of processes> ./main <infileA.bin> <infileB.bin> <outfileC.bin>
+
+where <number of processes> should be replaced by a square number + 1.
+For example 5, 10, 17 ...

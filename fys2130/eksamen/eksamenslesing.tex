@@ -1,0 +1,335 @@
+\documentclass[12pt]{article}
+\usepackage[norsk]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+\usepackage{mathtools} 		% Adds the declare paired 
+							% delimeter command to make costom \abs and \norm
+\usepackage{breqn}		 	% Adds dmath environment for automated brakeline
+\usepackage{xfrac}			% Adds slanted fractions (sfrac)
+\usepackage{cancel}			% Adds the cancel command, a slash through the symbol(s)
+\usepackage{tabularx}		% Adds adjustable width on tabulars
+\usepackage{cuted}			% Adds the strip command, pagewidth text in a twocolumn
+							% environment.  
+\usepackage{hyperref}
+\usepackage{parskip}		% Norske avsnitt
+\usepackage{siunitx}		% SI-enheter
+\usepackage{tablefootnote}
+\usepackage{tabularx}
+\usepackage{listings}
+
+% Alghorithm packages:
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% colored box
+\usepackage[most]{tcolorbox}
+
+% Numbers within section
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+% Start custom \abs \norm 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\newcommand{\equ}[1]{{\small\begin{align*}#1\end{align*}}}
+\newcommand{\ita}[1]{\textit{#1}}
+\newcommand{\ma}[1]{$#1$}
+\newcommand{\eq}[1]{{\small\begin{align}#1\end{align}}}
+\newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
+\renewcommand\vec[1]{\mathbf{#1}}
+\newcommand{\OP}[1]{\mathbf{\widehat{#1}}}
+\newcommand{\op}[1]{\hat{#1}}
+\newcommand{\unit}[1]{\mathbf{\hat{#1}}}
+
+\begin{document}
+\pagenumbering{gobble}
+\section{Frie og dempede svingninger}
+\label{sec:1}
+  
+Det mest sentrale i kapitlet er hva som karakteriserer et svingende system. Del 1.1 gir eksempler på matematisk beskrivelse av svingninger. Vi nøyer oss her med harmoniske svingninger, men selv om både amplitude, frekvens (evt. vinkelfrekvens) og fase er gitt, kan det matematiske uttrykket gis på flere ulike måter. Det er viktig å gjenkjenne ulike uttrykk for å nettopp kunne ekstrahere amplitude, frekvens og fase for alle skrivemåtene, inklusiv skrivemåter som bygger på komplekse tall. Dette er viktig basisstoff som går igjen  mange steder senere i boka, men inngår også i andre fysikkemner helt til topps av fysisk formalisme. Kapitlet er nesten bare ren matematikk, og en del av stoffet bør du kjenne godt til fra tidligere kurs.
+
+\tcbset{width=\textwidth,colback=cyan!25!white,colframe=cyan!75!black,
+arc=0pt,outer arc=0pt}
+
+\begin{tcolorbox}[title = Del 1.1 -- Kinematikk,breakable]
+  Den kinematiske beskrivelsen kan da være som denne: loddet svinger omkring et 
+  likevektspunkt. Maksimalt utslag \ma A relativt til likevektspunktet kalles svingningens
+  ampllitude. Tiden loddet bruker på hver fulle svingning kalles \ita{periodetiden} $T$.
+  Svingefrekvensen \ma f er den inverse av periodetiden, dvs. \ma{f\equiv 1/T} og 
+  m[les i inverse sekunder, eller Hz.
+\end{tcolorbox}
+
+Del 1.2 bringer inn fysikken og det vi kaller fysiske virkningsmekanismer. Hva er typisk for fysiske “krefter” (i vid forstand) som kan føre til svingninger. Hvilken ekstra betingelse må til? Vi bruker en “fjærpendel” (lodd som henger i enden av en fjær som kan strekkes elastisk) og bruker fysiske lover for å komme fram til en differensialligning. Ligningen løses og det er viktig å komme fram til en generelt løsning for deretter å se hva som må til for å få en entydig løsning på vår beskrivelse.
+
+\begin{tcolorbox}[title = Del 1.2 --  Dynamisk beskrivelse av et mekanisk system,breakable]
+Dobbelderivert av posisjon for svingning
+  \eq{\ddot z(t) = \frac{k}{m}z(t)}
+  Har løsning
+  \eq{z(t) = A e^{\alpha t}}
+  med \eq{\alpha = -\gamma \pm \sqrt{\gamma^2-\omega^2}}
+  
+  Overkritisk demping: $\gamma > \omega$
+  
+  Kritisk demping: $\gamma = \omega$
+  
+  Underkritisk demping: $\gamma < \omega$
+  
+  Se figur \ref{fig:1}
+\end{tcolorbox}
+%\begin{figure}[h!]
+%  	\caption{Demping}\label{fig:1}
+%  	\includegraphics[width=80mm]{/home/alexander/Pictures/demping.png}
+%\end{figure}
+
+Alle makroskopiske svingninger avtar med tiden dersom de ikke aktivt holdes ved like ved en form for energitilførsel. Tap fører til “dempede svingninger”. Del 1.3 tar opp dempede svingninger av aller enkleste slag og det viser seg at selv om differensialligningen har samme form for ulik grad av demping, kan vi få tre til dels vidt forskjellige former for tidsutvikling av et dempet svingende system: Overkritisk, kritisk og underkritisk demping. Dette er svært sentralt stoff, selv om vi kapittel 1 bare ser på et spesialtilfelle der vi får en såkalt lineær ligning. 
+
+\begin{tcolorbox}[title = Del 1.3 -- Dempede svinginger,breakable]
+   Friksjon i luft
+  \eq{\vec F_f = -b\vec v- D\abs v \vec v }
+\end{tcolorbox}
+
+Del 1.5 er et annet eksempel på et svingende system enn hva som ble behandlet i del 1.2. Nå ser vi først på en elektrisk svingekrets bestående av en spole og en kondensator. Drivkreftene er forskjellig fra den mekaniske fjærpendelen, men differensialligningen får samme form, noe vi kaller “svingeligningen”. Svingeligningen er svært sentral. Når resistans innføres i kretsen, får vi tap av energi etter som tiden går, noe vi allerede har diskutert i del 1.3.Del 1.4 er mindre sentral, og er bare tatt med for å minne om at det såkalte “superposisjonsprinsip-pet” som mange tror er en form for naturlov, bare gjelder for lineære svingeligninger. Får vi inn f.eks. en friksjonskraft som er proporsjonal med kvadratet av hastigheten (for fjærpendelen),  og for et slikt ikke-lineært system gjelder ikke superposisjonsprinsippet. Vi må ofte ty til numeriske løsninger for ikke-lineære problemer. Det er tilstrekkelig å skumlese denne delen raskt for å få med seg hovedbud-skapet i delkapitlet.
+
+\begin{tcolorbox}[title = Del 1.5 -- Elektriske svingninger,breakable]
+   Q er ladning, \ma{I=\dot Q} 
+   er elektrisk strøm, \ma V er spenning, \ma R er resistans, \ma L 
+   induktans og \ma C kapasitans
+  \eq{V_R &= RI\\
+  V_C &= Q/C\\
+  V_L &=  L \dot I = L \ddot Q}
+\end{tcolorbox}
+
+I del 1.6 beregner vi den totale energien til det svingende systemet. Vi bruker her den elektriske svinge-kretsen som utgangspunkt for beregningene. Det kan være lurt å gjennomføre en tilsvarende beregning av mekanisk energi for fjærpendelen for å se at konklusjonene blir de samme her som for den elektriskekretsen: Energien “skvulper fram og tilbake” mellom to ulike energiformer, men summen er konstant i tid (så lenge vi ikke har demping og derved tap).
+
+\begin{tcolorbox}[title = Del 1.6 -- Energibetraktninger,breakable]
+  Energien som til en hver tid er lagret i kondensatoren er gitt ved
+  \eq{E_C = \frac{QV}{2} = \frac{Q^2}{2C}}
+  \tcbline
+  Fra elektromagnetismen er det kjent at energien som er lagret i en induktanser gitt ved
+  \eq{E_L = \frac{LI^2}{2} = \frac{L\dot Q^2}{2}}
+  \tcbline
+  \eq{E_{tot}(t) = \frac{Q_0^2}{2C}}
+  
+  Vi merker oss at totalenergien er konstant, det vil si tidsuavhengig. 
+  Selv om energien i kondensatoren og induktansen varierer fra null til en maksimal verdi 
+  og tilbake i et oscillerende tidsforløp, er disse varisjonene tidsforskjøvet
+  med en kvart periode slik at summen blir uavhengig med av tiden.
+  Energien «skvulper» frem og tilbake mellom kondensatoren og induktansen.
+  En tidsforskyving mellom to energiformer synes å være et karakteristisk trekk
+  ved alle svinginger. Enkle svingninger er ofte løsninger av en annen ordens 
+  svingeligning, men alle svinginger kan også ha opphav i fenomener som må beskrives
+  matematisk på annet vis.
+\end{tcolorbox}
+
+Det er bare kapittel 1 og 2 som omhandler “svingninger” generelt i denne boka. Likevel vil f.eks. ut-trykkene i del 1.1 gjenkjennes i alle andre kapitler. Selv når vi har med bølger å gjøre, men måler utslag som funksjon av tid på ett bestemt sted, er signalet vi sitter igjen med akkurat slik som i del 1.1. 
+
+Det anbefales sterkt at man leser del 1.7: Læringsmål nøye etter å ha lest de forangående delkapitlene. Her kan du sjekke om du har fått med de aller viktigste momentene i kapitlet.
+
+\section{Tvungne svingninger og resonans}
+\textbf{Det mest sentrale i kapitlet er tvungen svingning, resonans og kvalitetsfaktor.} 
+
+Tema for kapitlet er påtrykt “harmonisk” kraft (av lang eller kortere varighet) og resonans. Dette er feno-mener som vi er fullstendig avhengig av. Det ligger under hørsel, syn og all moderne kommunikasjon så som radio, TV og internett. 
+
+Kapittel 2 er et mer komplisert kapittel enn det forrige. Temaet er at vi ikke bare setter i gang en sving-ning og ser hvordan systemet utvikler seg med tiden (som i kapittel 1), men at vi påtvinger en oscilleren-de kraft over en kortere eller lengre tid og følger bevegelsen. 
+
+I del 2.1 lar vi den påtrykte kraften variere harmonisk med en gitt frekvens. Kraften startes og vi ser hvordan systemet oppfører seg etter at kraften har virket så lenge at bevegelsen er blitt stasjonær (beve-gelsesmønsteret endrer seg ikke lenger med tiden). Vi merker oss hvilken amplitude svingningene da har og hvilken fase svingningen har sammenlignet med fasen til den påtrykte kraften. Dette er sentralt stoff!
+
+\begin{tcolorbox}[title = Del 2.1 -- Tvungnge svingninger,breakable]
+For et mekanisk system er utgangspunktet igjen Newtons annen lov (se kapittel 1): Summen
+av kreftene er lik massen ganger akselerasjonen
+\equ{F\cos(\omega_Ft) - k z(t) -b\dot z(t) = m\ddot z(t)}
+hvor
+$F\cos(\omega_F t)$ er den ytre kraften som svinger med sin egen vinkelfrekvens $\omega_F $. 
+Dersom
+vi setter
+\equ{\omega_0^2 = k/m}
+(vinkelfrekvensen for svingningen i et fritt svingende system), kan ligningen også skrives
+slik
+\eq{\ddot z(t)+(b/m) \dot z(t) + \omega_0^2 z(t)=(F/m) \cos(\omega_F t)}
+Dette er en inhomogen annenordens differensialligning, og den har en generell løsning av
+typen
+\equ{z(t) = z_h(t) + z_p(t)}
+hvor $z_h$ er en generell løsning av den tilsvarende homogene differensialligningen 
+(F satt lik
+null), 
+mens $z_p$ er en partikulær løsning av den fulle inhomogene differensialligningen.
+\tcbline
+Det er da naturlig å undersøke om en partikulær løsning kan ha følgende form
+\eq{z_p(t) = A \cos(\omega_F t - \phi)}
+hvor A er reell.
+\tcbline
+Faseforskjellen mellom utslag og påtrykt kraft er da gitt ved følgende uttrykk:
+\eq{\cot \phi = \frac{\cos \phi}{\sin \phi} = \frac{\omega_0^2 - \omega_F^2}{\omega_F b/m}}
+\tcbline
+Med litt mellomregning får vi da følgende uttrykk for amplituden i de tvungne svingningene:
+\eq{A = \frac{F/m}{\sqrt{(\omega_0^2 - \omega_F^2 )2 + (b\omega_F /m)^2}}}
+
+Det er nå på tide med en oppsummering av hva vi har gjort:\\
+
+For en tvungen svingning med en harmonisk kraft som varer lenge, har vi vist at en
+partikulær løsning (som gjelder lenge etter at kraften er koblet til) 
+faktisk er en harmonisk
+svingning som er faseforskjøvet i forhold til den opprinnelige kraften, 
+som gitt i ligning
+(2.2).\\
+
+Amplituden i svingningene er da gitt av ligning (2.4) og faseforskjellen mellom utslaget
+og kraften er gitt av ligning (2.3). Figur 2.1 viser skjematisk hvordan amplituden
+og fasen varierer med frekvensen til den påtrykte kraften. Frekvensen til kraften er gitt
+relativt til frekvensen til svingningene i samme system dersom det ikke var noe påtrykt
+kraft og heller ingen friksjon/demping.
+\end{tcolorbox}
+
+I del 2.2 påpeker vi at en tvungen svingning ofte får størst amplitude når den påtrykte kraften varierer med en frekvens omtrent lik oscillasjonsfrekvensen på det svingende systemet (dersom det ikke var noen påtrykt kraft). Fenomenet kalles resonans. Vi skiller mellom to litt ulike former for resonans, og merker oss hvilke egenskaper de to formene har. Sentralt stoff.
+
+Fasorbeskrivelsen i del 2.2.1 har du kanskje sett tidligere i elektromagnetismen? Den er med for å vise en nyttig anskuelsesform for å få fram en beskrivelse av svingninger ved hjelp av komplekse tall (inklusiv kompleks impedans). Ikke like sentralt som de forgående og neste delene.
+
+\begin{tcolorbox}[title = Del 2.2 -- Resonans,breakable]
+I vårt tilfelle vil kraften levere størst mulig effekt 
+til systemet dersom kraften har størst
+verdi samtidig som pendelloddet har størst mulig hastighet. Kraft og hastighet må virke
+i samme retning. Dette vil skje dersom kraften f.eks. oppover er størst samtidig som
+pendelloddet passerer likevektposisjonen på vei oppover. Dette svarer til at posisjonen er
+faseforskjøvet $\pi/2$ etter kraften. For å oppnå en slik tilstand, 
+må den ytre kraften svinge med resonansfrekvensen.
+\tcbline
+Amplituderesonansfrekvensen er:
+\eq{f_{amp.res.} = \frac{1}{2\pi} \sqrt{\omega_0^2 - \frac{b^2}{2m^2}}}
+hvor $\omega_0 = \sqrt{k/m}$.
+Faseresonansfrekvensen er
+
+\eq{f_{fase.res.} = \frac{1}{2\pi} \omega_0}
+Vi ser at de to resonansfrekvensene sammenfaller kun dersom dempingen $b = 0$.
+\tcbline
+\eq{L\ddot Q + R \dot Q +
+\frac{Q}{C} = V_0 cos(\omega_F t)}
+Denne ligningen er ikke-homogen, og løsningen finnes på samme måte som for mekanisk
+tvungne svingninger som vi nylig betraktet. Løsningen består av en sum av en partikulær
+løsning og en løsning av den homogene ligningen (når $V_0 = 0$). Løsningen av den homogene
+ligningen er allerede kjent, nå gjenstår det bare å finne en partikulær løsning. Vi forsøker
+følgende løsning:
+\tcbline
+\eq{Q_p(t) = A e^{i \omega_F t}}
+\tcbline
+Samtidig velges en eksponensiell form for beskrivelsen av den ytre påtrykte spenningen:
+\eq{V(t) = V_0 \cos(\omega_F t) \rightarrow V_0 e^{i \omega_F t}}
+\tcbline
+\eq{I_{krets}(t) =\frac{V_R}{R} = \dot Q 
+= \frac{V_0}{R + i(L \omega_F - \frac{1}{C\omega_F})} e^{i\omega_F t}}
+\tcbline
+Sammenhengen mellom \ma R, \ma C, \ma L, strøm og fase kan anskueliggjøres på en elegant måte ved
+hjelp av fasorer. Vi har allerede omtalt fasorer, men nå utvider vi bildet ved å trekke inn
+flere roterende vektorer samtidig. Se figur 2.1
+\end{tcolorbox}
+%\begin{figure}[h!]
+%  	\caption{Fasor}\label{fig:2}
+%  	\includegraphics[width=80mm]{/home/alexander/Pictures/fasor.png}
+%\end{figure}
+
+I del 2.3 omtales kvalitetsfaktoren Q. Ligningene 2.11-15 og figurene 2.6 - 8 er svært viktige sammen med den kvalitative forståelsen av fenomenet. Det tar lengre tid å oppnå en stasjonær svingning for en svingekrets med lite tap (høy Q-verdi) enn for en krets med mer tap (mindre Q-verdi). Det kan forstås slik: I et system som har lite tap kan vi lagre mer energi enn i et system med lite tap. Men da tar det len-gre tid å fylle på energi inntil max energi er oppnådd (ved høy Q). Og har vi mye energi og lite tap, tar det lang tid før energien er tapt etter at kraften slutter å virke. I koblingen mellom tid og energi møter vi her for første gang (men ikke siste!) på analogier til Heisenbergs uskarphetsrelasjon i kvantefysikken.
+
+\begin{tcolorbox}[title = Del 2.3 -- Kvalitetsfaktoren \ma Q,breakable]
+For tvungne svingninger er det vanlig å karakterisere systemet med en \ma Q-faktor. 
+(Må ikke
+sammenblandes med ladningen \ma Q i en elektrisk krets!) \ma Q står for “quality”, 
+så faktoren
+kalles også kvalitetsfaktoren. Faktoren sier oss noe om hvor lett det er å få systemet til
+å svinge, eller hvor lenge systemet vil fortsette å svinge etter at drivkraften har sluttet å
+virke. Dette er mer eller mindre ensbetydende med hvor lite tap/friksjon det er i systemet.
+Kvalitetsfaktoren for en svingende fjær-pendel er gitt som:
+\eq{Q = \frac{m\omega_0}{b} = \sqrt{\frac{mk}
+{b^2}}}
+Vi ser av formelen at jo mindre b er, desto større blir kvalitetsfaktoren \ma Q.
+\tcbline
+Det finnes to vanlige måter å definere Q på. Den første er:
+\eq{Q \equiv 2\pi
+\frac{\text{Lagret energi}}{\text{Tap av energi per periode}} = 2\pi
+\frac{E}
+{E_{tap-per-periode}}}
+\tcbline
+Tap av energi per periode er en litt uvant størrelse. 
+La oss heller ta utgangspunkt i \ma {P_{tap}}
+som er “energitap per sekund” med enheten watt. Vi vet at etter at den påtrykte kraften
+er fjernet, vil
+\eq{P_{tap} = -\dot E}
+\tcbline
+Da kan vi tilnærmet finne tap av energi i en periodetid T slik
+\equ{E_{tap-per-periode} = P_{tap} \cdot T}
+\tcbline
+Benyttes definisjonen i ligning (2.12), får vi
+\equ{P_{tap} = \frac{2\pi}{TQ} E}
+\tcbline
+Benytter vi definisjonen av \ma{P_{tap}} i ligning (2.13), 
+sammenhengen mellom vinkelfrekvens og
+periodetid, og dersom vi tar hensynt til fortegn, 
+får vi en differensialligning som viser
+tidsutviklingen av lagret energi etter at 
+drivkraften for den tvungne svingningen opphører.\\
+
+Ligningen blir
+\equ{P_{tap} = -\dot E = \frac{\omega_0}{Q} E}
+\tcbline
+Løsningen er
+\equ{E(t) = E_0 e^{-\omega_0t/Q}}
+Energien synker til \ma{1/e} av opprinnelig energi etter en tid
+\eq{\Delta t = \frac{Q}{\omega_0}
+= \frac{QT}{2\pi}}
+\tcbline
+I eksperimentell sammenheng benyttes ofte en annen definisjon av \ma Q-verdi enn den i
+ligning (2.12). Lager vi et plot som viser energi (NB:Ikke amplitude) 
+i det svingende systemet som
+funksjon av frekvens (som i figur 2.2), er \ma Q-verdien definert som
+\eq{Q = \frac{f_0}{\Delta f}}
+hvor halvverdibredden \ma{\Delta f}, vist i figuren, sammenholdes med resonansfrekvensen \ma{f_0}.
+\tcbline
+Produktet av \ma{\Delta t} og \ma{\Delta f} blir
+\eq{\Delta t \Delta f = \frac{1}{2\pi}}
+\tcbline
+Multipliseres dette uttrykket med Plancks konstant h, og anvendes et av kvantefysikken postulater at
+energien til et foton er lik \ma{E = hf}, får vi
+\eq{\Delta t \Delta E = \frac{h}{2\pi}}
+\end{tcolorbox}
+
+%\begin{figure}[h!]
+%  	\caption{\ma Q-verdi kan også defineres ut fra en grafisk fremstilling av energi
+%  	 lagret i svingesystemet
+%som funksjon av frekvens. 
+%\ma Q-verdien er da gitt som resonansfrekvensen \ma{f_0} dividert
+%med halvverdibredden \ma{\Delta f}.}\label{fig:3}
+%  	\includegraphics[width=80mm]{/home/alexander/Pictures/halvbredde.png}
+%\end{figure}
+\newpage
+\begin{tcolorbox}[title = Del 2.4 -- Tidsbegrenset tvunget svingning,breakable]
+Det kan være nyttig å peke på en del sammenhenger mellom parametere:
+\begin{itemize}
+\item Hvor mye energi som kan puttes inn i systemet innen en gitt tid avhenger av styrken
+på kraften (proporsjonalitet?).
+\item Hvor mye energi som kan puttes inn for en viss styrke på kraftpulsen, vil avhenge av
+hvor lang tid kraften virker.
+\item Tapet av energi er uavhengig av styrken på kraften etter at kraften har forsvunnet.
+\item Tapet av energi er proporsjonalt med amplituden til det svingende systemet.
+\end{itemize}
+\end{tcolorbox}
+
+Del 2.6 omtaler vår hørsel med vekt på hvordan resonans ligger bak at vi kan høre toner med flere for-skjellige frekvenser samtidig. Dette er en egenskap ved hørselen vår som ikke finnes i synssansen vår.
+\setcounter{section}{3}
+\newpage
+\section{Fourieranalyse}
+Vi forsøker å først fokusere på fouriertransformasjon som en metode for å bestemme amplitude og frekvens for en registrering av en svingning i et eksperimentelt system. Hensikten er å bildeliggjøre ma-tematikken som inngår i en fouriertransformasjon for at vi skal forstå hvordan vi kan få fram frekvens, amplitude og fase ved å bruke kjente egenskaper ved sinus- og cosinusfunksjonene. 
+
+Det som er spesielt utfordrende er å innse at dersom analysen vi skisserer gjennomføres for ”alle tenke-lige frekvenser”, kan vi plotte informasjonen vi kommer fram til i et såkalt ”frekvensbilde” (i motsetning til ”tidsbildet” som signalet opprinnelig ble registrert i). Det er samme informasjon om en svingning i ”frekvensbildet” som i ”tidsbildet”, men informasjonen er iblant mye mer konsentrert i ”frekvensbildet”. 
+
+Dette er innholdet av del 4.2 de første fire-fem sidene. Det anbefales at man strever med dette stoffet tilstrekkelig til at man forstår hvorfor integraler iblant er null og andre ganger forskjellig fra null.
+I del 4.3 gis så uttrykket for fouriertransformasjon og invers fouriertransformasjon i matematikken. Det er viktig å gjenkjenne kjernen i disse matematiske uttrykkene slik at man innser likheten mellom disse og uttrykkene vi brukte i den innledende delen i 4.2. Negativ frekvens innføres og drøftes. Del 4.3 er svært sentralt stoff.
+
+I 4.4 presenterer vi noen få eksempler på bruk av fouriertransformasjon innen fysikk. Hensikten er å bygge opp en bedre forståelse av hvordan et litt komplisert frekvensbilde kan tolkes. Vi bruker nå ut-trykk så som frekvensspekter, frekvensanalyse, frekvenskomponenter. Kjære barn har mange navn! Vi introduserer også uttrykk som grunntone, harmoniske og overtoner, noe vi kommer en god del tilbake til i senere kapitler.
+
+I del 4.5 drøfter vi hvordan et frekvensspekter blir påvirket av varigheten til en svingning og til dels også hvor lang tid registreringen foregår over. Dette er sentralt stoff som vi også kommer tilbake til når vi drøfter wavelet-transformasjon i et senere kapittel.
+
+I 4.6 presenterer vi kort andre former for fouriertransformasjon, så som fourierrekker og diskret fouri-ertransformasjon. Det legges her mest vekt på matematikken. Uttrykkene for diskret fouriertransforma-sjon er svært viktige for resten av kapitlet. Del 4.6.1 er ikke like sentral. Vi nevner også at det finnes en fast fourier transform (FFT) algoritme som er gull verdt ved numeriske beregninger.
+
+Praktisk bruk av diskret fouriertransformasjon (fft) blir drøftet i 4.7. Hvordan holde rede på fysiske enheter oppi behandling av rene tall? Hvordan kan vi tolke fourierspektrene og hente mest mulig infor-masjon ut av dem? Hva mener vi med ”folding” eller ”speiling”, og hva menes med ”samplingsteoremet”? Alt dette må man beherske for å nyttiggjøre seg (diskret) fouriertransformasjon. Viktig!
+
+\end{document}

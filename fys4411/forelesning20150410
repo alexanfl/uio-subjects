@@ -1,0 +1,11 @@
+Forelesning i FYS4411 10. april
+
+Newtons metode god nok for å finne derivert lik 0 i én dimensjon (bare \alpha).
+Kan bruke conjugate gradient i flere dimensjoner.
+
+1) start med verdi for \beta
+2) 10e5 MC-sykler for å finne \frac{d<E(\beta)>}{d\beta} = 0.
+  \frac{d<E(\beta)>}{d\beta} 
+    = 2<\frac{1}{\psi}\frac{d\psi}{d\beta}*E_L> - 2<E_L><\frac{1}{\psi}\frac{d\psi}{d\beta}>
+
+Morten legger ut kode for CG-metoden som vi kan bruke, ellers kan vi bruke Newton.

@@ -1,0 +1,40 @@
+Lecture 3 // FYS4460 // Feb. 8 2016
+
+MD modeling
+-----------
+
+Algorithm
+---------
+
+Setup -> (\vec r_i, \vec v_i)
+
+Simulation loop         —>  calculate velocity
+                        |   calculate forces
+                        |   calculate acceleration
+                        |   calculate position
+      every m time step:|_  update list of neighbors
+
+--------------------------
+
+Code
+----
+
+for i in range(N):
+    for j in range(i+1, N):
+        dr = (xi - xj)^2 + (yi - yj)^2 + (zi - zj)^2    #r^2
+        rinv = 1./dr
+        rinv6 = rinv*rinv*rinv                          #1/r^6
+        rinv12 = rinv6*rinv6
+        
+        F = (2*rinv12-rinv6)*rvec*rinv                  #multiply by 24 after
+        
+
+--------------------------
+
+
+Analysis of MD runs
+-------------------
+
+{\vec r_i(t), \vec v_i(t)}
+
+

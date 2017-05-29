@@ -1,0 +1,47 @@
+\documentclass{article}[12pt]
+
+\usepackage{amsmath}
+
+\newcommand{\eq}[1]{\begin{align*}#1\end{align*}}
+
+\begin{document}
+
+First lecture in percolation
+
+Four projects.
+
+Programs in percolation are given, 
+must write own programs in molecular dynamics.
+
+Oil production:
+  - Used to produce oil from porous media.
+    - Use the same mathematical tools as in phase transitions.
+    - Fuel cells can copy the way lungs work, to increase efficiency.
+    - n micro scale, we can use continuum mechanics.
+    - On nano scale, we must address it differently.
+
+1. Md. dyn.
+  - Four weeks
+2. MD
+3. General description of disordered porous media.
+  - Scaling.
+4. Project
+  - 10 min. presentation
+  - 1/2-1 wk. work.
+
+Probability of liquid to go through media: $p \in [0,1]$, 
+$p_c$ is critical probability.
+
+
+\eq{
+  \rho = \frac{M}{V}\\
+  \rho \propto (p-p_c)^{\beta}
+}
+
+Result: $M \propto L^{1.89}$
+
+\eq{
+  \Rightarrow \rho = \frac{M}{V} \propto \frac{L^{1.89}}{L^2} = L^{-0.11}
+}
+
+\end{document}

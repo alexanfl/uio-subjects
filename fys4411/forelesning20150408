@@ -1,0 +1,45 @@
+8. april fys4411
+
+Overordna aspekt
+
+\psi(r1, r2, …, alfa, beta, …) = Det(r1, r2, …, alpha) J(r1, r2, …, beta)
+
+=> E(alpha, beta)
+
+Vi skal
+  1) Erstatte våre \psi_alpha(r1) med Hartree-Fock-én-partikkel-bf.
+  
+  2) Numerisk vil vi trenge en ny klasse av én-partikkel-funksjoner,
+    Trenger å tabulere koeffisientene c_i og alpha_i
+  
+  3) Trenger derivert D_i:exp(-\alpha*x_i) og D_i^2:exp(-\alpha*x_i),
+    samt D_i:exp(-\alpha*x_i^2) og D_i^2:exp(-\alpha*x_i^2)
+    - Inngår i SD, kvantekraft og lokal energi.
+  
+  4) Trenger ikke variere parameter i SD. Eneste varasjonsparameter er \beta
+    i Jastrow-faktor.
+  
+  5) Optimere beta i en VMC-kjøring ved hjelp av metoder som finner minimum,
+    conjugate gradient eller steepest descent.
+  
+  6) Vi vil trenge å programmere dE(beta)/dbeta.
+  
+  7) Foreta ca. 10e5 og optimal beta. MEd optimal beta, regner vi ut
+    endelig energi med 10e7 til 10e9 samplinger. Gjenta alt i 1 og 2
+    for He, Be og Ne, samt noen utvalgte molekyler.
+
+The Hartree-Fock (HF) Method
+  - It is an approximate solution to SE.
+  - The basic ingredients are
+    1) We have a HF single-particle Hamiltonian h^{HF} instead of h_0.
+      h^{HF} = h_0 + u^{HF}, where u^{HF} is a potential determined by the HF algorithm.
+      It is a correction of h_0, since we have more than one electron,
+      by including an average repulsion from the other electrons.
+    
+    2) We now have
+      h^{HF}*\psi_{\alpha}^{HF} = \epsilon_{̈́\alpha}^{HF}*\psi_{\alpha}^{HF} 
+    
+    3) The HF algorithm means to choose u^{HF} in order to have
+      <H> = <\Phi_0^{HF}>  <\Phi_0^{HF}|H|\Phi_0^{HF}>
+      The variational principle ensures that E^{HF} >= E_0^{exact}
+

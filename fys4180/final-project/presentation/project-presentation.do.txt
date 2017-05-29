@@ -1,0 +1,204 @@
+TITLE: Experimental Method and Analysis of the Reaction $^{28}\text{Si(p, p')}^{28}\text{Si}$
+AUTHOR: Alexander Fleischer
+DATE: Today
+!split
+
+======= Introduction =======
+
+!split
+
+===== Oslo Cyclotron Laboratory =====
+!bslidecell
+    * Built in 1979.
+    * One of three cyclotrons in Norway, only one for ionized atoms.
+    * Field of study is primarily nuclear physics/chemistry.
+    * Secondarily is the use in nuclear medicine.
+!eslidecell
+!split
+
+===== Oslo Cyclotron Laboratory =====
+!bslidecell 00
+Four different particle beams 
+    * Proton, Deuteron, $^{3}\text{He}$ and $^{4}\text{He}$
+    * We are interested in the reaction $^{28}\text{Si(p, p')}^{28}\text{Si}^*$
+!eslidecell
+
+!bslidecell 01
+FIGURE: [../figures/nucleus-fixed.png, width=1000]
+!eslidecell
+!split
+
+======= Method and Results =======
+!split
+
+===== Experimental Setup =====
+!bslidecell 00
+    * Cyclotron accelerates 16 MeV proton in a spiralling motion using an electric field.
+    * A magnetic field bends the particles trajectory.
+    * Particle is then ejected from the cyclotron.
+!eslidecell
+
+!bslidecell 01
+FIGURE: [../figures/cyclotron-schematic-tavernier.png, width=1000]
+!eslidecell
+!split
+
+===== Experimental Setup =====
+!bslidecell 00
+    * Particle accelerator with CACTUS and SiRi detectors.
+    * Spherically distributed NaI scintillators captures photons emitted from excited nucleus.
+    * Silicon Ring detects energy of ejected proton.
+!eslidecell
+
+!bslidecell 01
+FIGURE: [../figures/ocl-layout.jpg, width=1000]
+!eslidecell
+!split
+
+===== Data Analysis – Particle Calibration =====
+
+!bslidecell 00
+    * SiRi consists of eight Silicon pieces.
+    * Each of these have two parts: $\Delta E$ and $E$.
+    * $\Delta E$ measures an energy loss of proton and $E$ stops the particle.
+    * Divided into another eight strips to measure angle.
+    * Approximately linear energy $E(x) = a + bx$.
+    * $a$ and $b$ called gain and shift. Adjusted to calibrate detectors.
+    * Plot $\Delta E/E$ and see the bananas.
+!eslidecell
+
+!bslidecell 01
+FIGURE: [../figures/m-e-de-uncalibrated.pdf, width=1000]
+
+FIGURE: [../figures/m-e-de-calibrated.pdf, width=1000]
+!eslidecell
+
+!split
+
+===== Data Analysis – Selecting a Reaction =====
+
+!bslidecell 00
+    * Gate on the banana for the ejected proton and sort again.
+    * We see the apparent thickness of the $\Delta E$ detector, which corresponds to the known value 130 $\mu m$
+!eslidecell
+
+!bslidecell 01
+FIGURE: [../figures/h-thick-fromcalibrated-zoom.pdf, width=1000]
+
+FIGURE: [../figures/m-e-de-thick.pdf, width=1000]
+!eslidecell
+
+!split
+
+===== Data Analysis – Selecting a Reaction =====
+
+!bslidecell 00
+    * We project the coincidence matrix on the y-axis.
+    * Excitation energy $E_x$ vs. photon count
+    * Compare to known values for the excitation values of the first six levels.
+!eslidecell
+
+!bslidecell 01
+FIGURE: [../figures/h-ex-calibrated-zoom.pdf, width=1000] 
+!eslidecell
+
+|---------------------------------------------------------------------|
+| $E_x$ [MeV] | 0.0 | 1779.03 | 4617.86 | 4979.92 | 6276.20 | 6690.74 |
+|---------------------------------------------------------------------|
+
+
+!split
+
+===== Data Analysis – Gamma Calibration =====
+
+!bslidecell 00
+    * Correct for the gain and shift as done for SiRi.
+    * Leading edge discriminators (LEDs).
+        * Looks at the leading edge of signal after some threshold.
+        * Gives timing variance.
+        * Amplitude of signal dependent on energy.
+            * Curve fitting.
+    * Background radiation.
+        * Start experiment without reaction.
+    * Delayed gamma rays, random coincidences.
+        * Gate on corresponding peak and substract from the prompt peak.
+!eslidecell
+
+!bslidecell 01
+FIGURE: [../figures/m-nai-e-t-corrected.pdf, width=1000]
+
+FIGURE: [../figures/m-nai-e-t-corrected-fit.pdf, width=1000]
+!eslidecell
+
+!split
+
+===== The Coincidence Matrix =====
+
+!bslidecell 00
+    * The corrected coincidence matrix for $E_\gamma$ vs. $E_x$.
+    * Particle, gamma and time calibrated, without background raditation.
+!eslidecell
+
+!bslidecell 01
+FIGURE: [../figures/m-alfna-week2.pdf, width=1000]
+!eslidecell
+
+!split
+
+===== The Oslo Method =====
+!bslidecell 00
+    * We find the coincidence matrix to perform the Oslo Method.
+    * Can extract the nuclear level density (NLD) $\rho$ and gamma strength function (GSF) $\tau$ in one experiment.
+    * $\rho$ and $\tau $ can be used to find probaility $P$ for the reaction
+    * $P(E_x,E_\gamma) \propto \tau (E_\gamma) \cdot \rho(E_x-E_\gamma)$.
+!eslidecell 
+
+!bslidecell 01
+Three steps:
+    o Unfolding the gamma ray spectrum.
+    o Extracting the 1st gen. gamma rays.
+    o Extracting NLD and GSF.
+Where the last step was not part of our project.
+!eslidecell 
+!split
+
+===== The Oslo Method – Unfolding of the Coincidence Matrix =====
+!bslidecell 00
+The gamma ray interacts with the detector in several ways:
+    * Photoelectric effect.
+    * Compton scattering
+    * Pair production (electron/positron, single or double escape).
+We *unfold* the matrix by reducing everything, but the photoelectric effect.
+    * Need a response matrix $v_{out} = R v_{in}$. to find the unfolded coincidence matrix.
+!eslidecell
+
+!bslidecell 01
+FIGURE: [../figures/escape-peak.gif, width=1000]
+!eslidecell
+
+!split
+
+
+===== The Oslo Method – Multiplicity =====
+!bslidecell 00
+    The multiplicity $\langle M \rangle$ is defined as the average number of gamma rays emitted for a given excitation level $E_x$.
+!eslidecell
+
+!bslidecell 01
+Two methods:
+    o $\langle M \rangle = \frac{E_x}{\langle E_\gamma \rangle}$
+    o $\langle M \rangle = k\cdot \frac{N_c}{N_s}$
+        * $N_c$ is the coincidence spectrum (proton in coincidence) and $N_s$ is the single spectrum, corresponding to to our bananas.
+        * k is a constant we find by using a known multiplicity.
+!eslidecell
+!split
+
+===== Unfolding – Result =====
+FIGURE: [../figures/alfna-no-background.png, width=1000]
+
+!split
+
+======= Conclusion =======
+!split
+
+

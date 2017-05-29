@@ -1,0 +1,189 @@
+\documentclass[norsk, 12pt]{article}
+\usepackage[norsk]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage{times}			% Default times font style
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+\usepackage{amssymb} 		% Math symbols package
+
+\usepackage{hyperref}
+\usepackage[letterpaper, margin=1in]{geometry}
+
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\vm}[1]{\begin{vmatrix}#1\end{vmatrix}}
+
+\title{}
+\begin{document}
+\section*{Exercise 1.3}
+
+Given wave functions
+
+\begin{align*}
+	\Psi(\vec R) \in X= \mathbb{R}^3
+\end{align*}
+
+\subsection*{1.3.1}
+We first consider
+\begin{align*}
+	\Psi(\vec r_1, \vec r_2) = e^{-\alpha |\vec r_1 - \vec r_2|} = e^{-\alpha r_{21}}
+\end{align*}
+
+Permuting the particles in this wave function, we see that we get
+\begin{align*}
+	P_{\sigma}\Psi = e^{-\alpha |\vec r_2 - \vec r_1|} = e^{-\alpha r_{12}} = \Psi
+\end{align*}
+
+Since $r_{12}=r_{21}$ is just the distance between the particles,
+we see that the eigenvalue of $P_{\sigma}$ must be 1, and thus $\Psi$
+is \textit{totally symmetric}.
+
+We also have that $\Psi$ is square integrable for $\alpha \neq 0$, since
+\begin{align*}
+	\int_{-\infty}^{\infty} \mathrm{d}x\: |f(x)|^2 =
+	\int_{-\infty}^{\infty} \mathrm{d}x\: e^{-c^*|x| - c|x|}=
+	\int_{-\infty}^{\infty} \mathrm{d}x\: e^{-2a|x|}=\frac{1}{a}<\infty
+\end{align*}
+for $c = a + ib$.
+\subsection*{1.3.2}
+If we now permute
+\begin{align*}
+	\Psi(\vec r_1, \vec r_2) = \sin(\vec e_z\cdot(\vec r_1 - \vec r_2)) = \sin(z_1-z_2)
+\end{align*}
+instead, we get
+\begin{align*}
+	P_{\sigma}\Psi = \sin(z_2-z_1) = -\sin(z_1-z_2) = (-1)^1 \Psi
+\end{align*}
+which means that the wave function is \textit{totally antisymmetric}.
+
+This function is not square integrable, since
+\begin{align*}
+	\int_{-\infty}^{\infty} \mathrm{d}x\: \sin^2(x) = \infty
+\end{align*}
+
+\subsection*{1.3.3}
+Finally, we look at
+\begin{align*}
+	\Psi(\vec r_1, \vec r_2, \vec r_3) =
+	\sin[\vec r_1 \cdot(\vec r_2\times \vec r_3)]
+	\prod_{i=1}^{3}e^{-|\vec r_i|^2}
+\end{align*}
+where we see that the product part can be permuted without consequences to the
+eigenvalue.
+
+For the \textit{scalar triple product}, we have
+\begin{align*}
+	&\vec i\cdot(\vec j\times\vec k) = \vec k\cdot(\vec i\times\vec j)
+	=\vec j\cdot(\vec k\times\vec i)\\
+	=-&\vec j\cdot(\vec i\times\vec k)=-\vec k\cdot(\vec j\times\vec i)=
+	-\vec i\cdot(\vec k\times\vec j)
+\end{align*}
+The upper part here corresponds to \textit{even} number of permutations,
+and the lower part corresponds to \textit{odd} number of permutations.
+
+Thus
+\begin{align*}
+    P_{\sigma}\Psi = (-1)^{|\sigma|}\Psi
+\end{align*}
+and the function is \textit{totally antisymmetric}.
+
+The 
+
+
+
+\section*{Exercise 1.13}
+\label{sec:2}
+\subsection*{a)}
+\label{sub:1.13a}
+
+Given the subspace $L^2(X^N)_{AS}$,
+we want to find a basis for $N=2,3,4$ particles, when we have the orthonormal orbitals
+$\phi_{\mu},\:\mu=1,…,6$.
+
+Such a basis can be written as a Slater determinant
+\begin{align*}
+    \Phi_{\mu_1,...,\mu_N} &= \la \vec x| \vec\mu\ra 
+    = \la x_1\cdots x_N | \mu_1\cdots\mu_N \ra\\
+    &=\frac{1}{\sqrt{N!}}
+    \vm{\phi_{\mu_1}^1&\cdots&\phi_{\mu_1}^N\\
+    \vdots&\ddots&\vdots\\
+    \phi_{\mu_N}^1&\cdots&\phi_{\mu_N}^N}
+\end{align*}
+
+\paragraph{N=2}
+\label{par:1}
+The basis for two particles is then
+\begin{align*}
+	\Phi_{\mu_1,\mu_2} &= \la x_1 x_2 | \mu_1 \mu _2 \ra\\
+    &=\frac{1}{\sqrt{2}}\left(\phi_{\mu_1}^1 \phi_{\mu_2}^2 - \phi_{\mu_2}^1 \phi_{\mu_1}^2 \right)
+\end{align*}
+
+\paragraph{N=3}
+\label{par:2}
+\begin{align*}
+	\Phi_{\mu_1,\mu_2,\mu_3} &= \la x_1 x_2 x_3 | \mu_1 \mu _2 \mu_3 \ra\\
+    &=\phi_{\mu_1}\la x_2 x_3 | \mu _2 \mu_3 \ra - \phi_{\mu_2}\la x_1 x_3 | \mu _1 \mu_3 \ra + \phi_{\mu_3}\la x_1 x_2 | \mu _1 \mu_2 \ra
+\end{align*}
+
+\paragraph{N=4}
+\label{par:3}
+\begin{align*}
+	\Phi_{\mu_1,\mu_2,\mu_3,\mu_4} &= \la x_1 x_2 x_3 x_4 | \mu_1 \mu _2 \mu_3 \mu_4 \ra\\
+    &=\phi_{\mu_1}\la x_2 x_3 x_4 | \mu _2 \mu_3 \mu_4 \ra 
+    - \phi_{\mu_2}\la x_1 x_3 x_4 | \mu _1 \mu_3 \mu_4 \ra\\&
+    + \phi_{\mu_3}\la x_1 x_2 x_4 | \mu _1 \mu_2 \mu_4 \ra
+    -  \phi_{\mu_4}\la x_1 x_2 x_3 | \mu _1 \mu_2 \mu_3 \ra\\
+\end{align*}
+
+\subsection*{b)}
+\label{sub:1.13b}
+
+We can only have six particles when we have six one-particle functions. 
+If we filled up the determinant with more of the same one-particle functions, we
+could get equal rows, and the determinant would be zero.
+
+\subsection*{c)}
+\label{sub:1.13c}
+We have
+\begin{align*}
+	|\vec\mu\ra = |\mu_1\cdots \mu_N\ra
+\end{align*}
+and $\mu = 1,...,6$, which means we have six bits that can be on or off
+\begin{align*}
+	|n_1\cdots n_6\ra
+\end{align*}
+\paragraph{N=2}
+For only two particles, we get $\{\mu_1,\mu_2\} = \{1,2\}$, and
+\begin{align*}
+	|\mu_1 \mu_2\ra = |1,2\ra = |110\ra
+\end{align*}
+since
+\begin{align*}
+	110_2 = 2^2 + 2^1
+\end{align*}
+
+\paragraph{N=3}
+\begin{align*}
+	|\mu_1 \mu_2 \mu_3\ra = |1,2,3\ra &= |1110\ra
+\end{align*}
+
+\paragraph{N=4}
+\begin{align*}
+	|\mu_1 \mu_2 \mu_3 \mu_4\ra = |1,2,3,4\ra &= |11110\ra
+\end{align*}
+
+\subsection*{d)}
+\label{sub:1.13d}
+Since the Fock space is the direct sum of all $L^2_N$ spaces
+\begin{align*}
+	\dim F = \sum_{N=0}^{\infty}\dim L^2(X^N) = \sum_{i=1}^{N} 6^i
+\end{align*}
+
+\subsection*{e)}
+\label{sub:1.13e}
+Since we have $L$ orbitals, we get
+\begin{align*}
+	\dim F = \sum_{i=1}^{N} L^i
+\end{align*}
+
+\end{document}

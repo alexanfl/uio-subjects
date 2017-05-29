@@ -1,0 +1,323 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+\usepackage{mathtools} 		% Adds the declare paired 
+							% delimeter command to make costom \abs and \norm
+\usepackage{breqn}		 	% Adds dmath environment for automated brakeline
+\usepackage{xfrac}			% Adds slanted fractions (sfrac)
+\usepackage{cancel}			% Adds the cancel command, a slash through the symbol(s)
+\usepackage{tabularx}		% Adds adjustable width on tabulars
+\usepackage{tabu}           % colored font in tabular
+							% environment.  
+\usepackage{hyperref}
+\usepackage{siunitx}		% SI-enheter
+\usepackage{times}
+\usepackage[dvipsnames]{xcolor,colortbl} % expanded colors and table colors
+
+% Capitalized headings
+\usepackage{sectsty}
+\usepackage{parskip}
+
+% Set margins
+\usepackage[a4paper, margin=0.75in]{geometry}
+
+
+% Numbers within section
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+% Start custom \abs \norm 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\newcommand{\equ}[1]{{\small\begin{align*}#1\end{align*}}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ita}[1]{\textit{#1}}
+\newcommand{\ma}[1]{$#1$}
+\newcommand{\eq}[1]{{\small\begin{align}#1\end{align}}}
+\newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
+\renewcommand\vec[1]{\mathbf{#1}}
+\renewcommand\vec[1]{\mathbf{#1}}
+\renewcommand\vec[1]{\mathbf{#1}}
+\newcommand{\OP}[1]{\mathbf{\widehat{#1}}}
+\newcommand{\op}[1]{\hat{#1}}
+\newcommand{\unit}[1]{\mathbf{\hat{#1}}}
+
+
+
+%% Section renewcomands
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{subsection}.\arabic{figure}}
+
+
+
+
+\title{\Huge\bfseries \MakeUppercase{Final Project---FYS4460} \\[12pt]
+    \large Introducing the Nosé-Hoover Thermostat in Lennard-Jones Systems}
+\author{Alexander Fleischer}
+
+
+\begin{document}
+
+\maketitle
+\begin{center}
+\ita{Introduction of the Nosé-Hoover thermostat
+    and measurements of RMS-displacement using various
+    thermostats. Discussion of the various thermostats for
+    for various thermodynamic measures.}
+    
+\end{center}
+
+
+
+\sectionfont{\bfseries\normalsize\MakeUppercase}
+
+
+\section{Introduction}
+In this final project, I've extended the studies of the Lennard-Jones
+system of Argon atoms, that we started in the first project. 
+In particular, I've looked at three different thermostats---the
+Anderson, Berendsen and Nosé-Hoover thermostats.
+
+Statistical mechanics is all about predicting the
+thermodynamic properties of a system.
+These properties could be the equations of 
+state\footnote{A thermodynamic equation that relates
+two or more of the system states, such as temperature, internal
+energy, pressure and volume.},
+phase transition\footnote{Going from for example solid to fluid.} 
+of the matter and so on.
+Studying such systems analytically often proves difficult,
+unless we are looking at idealizes, simple 
+systems\footnote{Such systems could be the Ising model,
+    ideal paramagnets, Einstein solids etc.}.
+Luckily, we can study the realistic systems through numerical
+models. Molecular dynamics (MD) is a powerful tool
+to study the real systems more closely.
+
+In a classical MD simulation we are often interested
+in studying the \ita{microcanonical ensemble}.
+The ensemble is all the configurations a system can have
+under the conditions of constant number of particles $N$,
+volume $V$ and total energy $E$.
+We therefore often refer to it as the $NVE$ ensemble.
+A box of volume $V$ with $N$ particles that are
+unaffected by the surroundings is such an ensemble,
+and it can obviously have an enormous amount of different sets of
+states.
+Over time, we expect that all the particles microstates are
+equally likely to occur. This is called the
+\ita{fundamental assumption of statistical mechanics}.
+If we now take the average of the whole ensemble and all its
+configurations, we can calculate the thermodynamic properties
+of the system.
+
+For large and complicated systems, we will have difficulties
+calculating the ensemble average.
+Instead we simulate the system and its evolution over time
+with molecular dynamics methods.
+The reason for this is that the time-evolution average of our
+system should give us an estimate of the ensemble average.
+
+\section{From the Microcanonical to the Canonical Ensemble}
+The microcanonical ensemble had a constant energy since we didn't
+let any energy leave or enter the system.
+While the energy is constant, there would still be fluctuations
+in the temperature. By stabilizing the temperature, we go
+from microcanonical to the \ita{canonical} ensemble.
+To make the temperature constant, we couple it to a 
+heat bath of some desired temperature.
+This is called a thermostat.
+
+
+Obviously energy will travel from or to the heat bath and
+the total energy is no longer constant---now we have
+a $NVT$ ensemble.
+
+For a finite system, though we claim to have a $NVT$ ensemble,
+we will see some temperature fluctuations.
+We can find averages and variances from the Boltzmann distribution,
+and the system fluctuates as
+\begin{equation}
+    \frac{\sigma_T}{\langle T \rangle} = \sqrt{\frac{2}{3N}}
+\end{equation}
+
+This tells us that the system size determines the size of the fluctuations.
+As $N\rightarrow \infty$, the fluctuations fade away.
+A consequence is that the energy dies out too,
+and the microcanonical and canonical ensemble merge together.
+
+To couple the system to the heat bath and creating the canonical ensemble,
+we will look at three thermostats: the Berendsen, Andersen and Nosé-Hoover
+thermostats.
+
+A thermostat should satisfy some requirements:
+\begin{itemize}
+    \item It should be able to control the temperature of the system
+        such that it is close to the temperature of the heat bath.
+    \item It should not disturb the system dynamics, and it should
+        sample the quantities of the phase space (positions and velocities).
+    \item It should be adjustable.
+    \end{itemize}
+
+\section{Temperature Measurements}
+To measure the temperature of the system in the 
+$NVE$ ensemble, we use the equipartition theorem.
+The equipartion theorem states that at thermal equilibrium,
+every quadratic degree of freedom in the Hamiltonian of the system
+must have an average energy of $\sfrac{1}{2}k_b T$.
+Every atom in the system has three quadratic degrees of freedom in the
+kinetic energy, and there are $N$ atoms, thus at equilibrium the kinetic 
+energy is
+\begin{equation}
+    \langle E_k \rangle = \frac{3}{2}N k_b T
+\end{equation} 
+
+This is the ensemble average of the kinetic energy,
+and as we saw earlier, the time-average for our system should be the same.
+The estimated temperature is then
+\begin{equation}
+    T = \frac{2}{3} \frac{\langle E_k \rangle}{N k_b}
+\end{equation}
+
+
+\section{The Berendsen Thermostat}
+Many thermostats rescale the velocities of the systems' particles
+by a factor $\gamma$. One of these is the \ita{Berendsen thermostat}.
+The scaling factor is
+\begin{equation}
+    \gamma = \sqrt{1+\frac{\Delta t}{\tau}\left(
+            \frac{T_{\text{bath}}}{T} - 1    
+        \right)}
+\end{equation}
+Here $\tau$ is called the \ita{relaxation time}: which lets us
+adjust the (weak) coupling to the heat bath. A greater $\tau$ value gives
+a weaker coupling.
+This means that the Berendsen thermostat works by dampening the
+fluctuations of the systems' kinetic energy.
+The velocity scaling is such that change in temperature is proportional
+to difference in temperature between the heat bath and the system.
+\begin{equation}
+    \Delta T = \frac{\Delta t}{\tau}(T_0 - T(t))
+\end{equation}
+
+The thermostat is not able to represent a correct canonical ensemble,
+but for large enough systems, we will achieve approximately
+correct results.
+It is often used because it effectively thermalizes the system to
+the temperature of the heat bath,
+and can be used to initalize a system before applying the Nosé-Hoover
+thermostat.
+
+\section{The Andersen Thermostat}
+Another simple thermostat is the \ita{Andersen thermostat}.
+It works by simulating collisions between particles in the system
+and in the heat bath.
+For every particle in the system we generate a random number
+uniformly generated between 0 and 1.
+If the number is less than $\sfrac{\Delta t}{\tau}$,
+we let the particle be one of the colliding particle. 
+Thus the particle needs a new velocity, which is
+generated from a Boltzmann distribution with standard deviation
+$\sqrt{k_B T_{\text{bath}}/m}$.
+We can adjust the thermostat by changing $\tau$, which can
+be considered the \ita{collision time}.
+The collision time describes the strength of the coupling beween
+the system and the heat bath.
+
+Assuming ergodicity, the Andersen thermostat gives us
+a canonical distribution of microstates.
+The Algorithm is non-deterministic and thus not time-reversible.
+It should only be used when measuring time-independent properties.
+Diffusion, which is something we have looked at, should not be
+calculated if the system has been influenced by the Andersen thermostat.
+
+The thermostat is useful for equilibrating the system,
+but disturbs the natural vibrations of the crystal structure.
+
+In project 1 we experienced that the Berendsen thermostat gave smaller
+fluctuations in the system than the Andersen thermostat.
+
+
+
+\section{The Nosé-Hover Thermostat}
+Our goal in this project was to implement a more complicated and
+better thermostat. This is the Nosé-Hoover thermostat,
+and we wish to compare it to the two others.
+The Nosé-Hoover thermostat introduces the heat bath as an additional pair
+of degrees of freedom to the system---making the heat bath part of our
+system. It is done by introducing the degrees of freedom in the
+systems Lagrangian. It is done in such a way that when the total
+acts like a micro-canonical ensemble, the actual degrees
+of freedom samples a canonical ensemble. 
+It relies on that we introduce the virtual mass $Q>0$
+and the virtual velocity $\dot{\tilde s}$. The Lagrangian, 
+
+\begin{equation}
+    \mc L = \sum_i \frac{1}{2}m_i{(s\dot{r}_i)}^2 - u(r) 
+    + \frac{1}{2}Q\dot{s}^2 - gk_b T_0 \ln s
+\end{equation}
+
+The first two terms are the kinetic and potential energy of
+the actual system, while the two last are the kinetic
+and potential energy of $\tilde s$.
+Here $g$ is $3N + 1$ in the Nosé formalism. This uses
+$\tilde s$ as a time-scaling parameter, and the actual time step is
+not constant. In the Hoover formalism, $g=3N$, and there is no time
+scaling. This means the time-step is constant.
+Then we can choose a friction parameter $\gamma = \dot s/s$.
+Now we don't have to solve the equations of motion for
+for the velocity (or momentum), and only include
+the friction in the equations. In MD units we then have
+\begin{equation}
+    \dot{v} = F - \gamma v, \qquad \dot{r} 
+    = v, \qquad \dot{\gamma} = \frac{1}{Q}\bigg(2K - 3NT_0\bigg)
+\end{equation}
+
+
+The integration scheme is now
+\begin{align}
+v_{i+1/2} 
+    &= v_{i} + (F_i - \gamma_i v_i)\frac{\Delta t}{2} \\
+\gamma_{i+1/2} 
+    &= \gamma_i + \frac{1}{Q}(2K_i - 3NT_0)\frac{\Delta t}{2}. \\
+r_{i+1} 
+    &= r_{i} + v_{i+1/2}\Delta t \\
+v_{i+1} 
+    &= v_{i+1/2} + (F_{i+1} - \gamma_{i+1} v_{i+1/2})\frac{\Delta t}{2} \\
+\gamma_{i+1} 
+    &= \gamma_{i+1/2} + \frac{1}{Q}(2K_{i+1} - 3NT_0)\frac{\Delta t}{2}.	
+\end{align}
+
+The thermostat has now been included in the integration scheme
+which makes it an implicit scheme---unlike the other thermostats
+which do not rely on a particular scheme.
+
+\section{Conclusion}
+We first looked at two thermostats that are easy to understand
+and implement.
+
+The Berendsen thermostat is easy to use, but as we saw it does
+not sample the canonical ensemble correctly. It should
+therefore only be used for initialization.
+
+The Andersen thermostat on the other hand samples the canonical ensemble.
+It is also easy to use, but it is a stochastic method
+and thus not time-reversible or deterministic.
+The thermostat can give good results, but it also disturbs the dynamics
+of the system, and messes up the trajectory.
+It should therefore not be used for measuring time-dependent
+quantities such as diffusion.
+
+The aim of the project was to study the more complicated Nosé-Hoover
+thermostat. It is unlike the two others both deterministic and
+it samples the canonical ensemble.
+It is harder to implement and understand, and it turns
+the equations of motion into a (semi-) implicit scheme.
+
+
+\end{document}

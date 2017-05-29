@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Experimental Method and Analysis of the Reaction $^{28}\text{Si(p, p')}^{28}\text{Si}$">
+
+<title>Experimental Method and Analysis of the Reaction $^{28}\text{Si(p, p')}^{28}\text{Si}$</title>
+
+
+
+
+
+
+
+<!-- reveal.js: http://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px;
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">Experimental Method and Analysis of the Reaction \( ^{28}\text{Si(p, p')}^{28}\text{Si} \)</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Alexander Fleischer -->
+
+<center>
+<b>Alexander Fleischer</b> 
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<br>
+<p>&nbsp;<br>
+<center><h4>Dec 1, 2015</h4></center> <!-- date -->
+<br>
+</section>
+
+
+<section>
+<h1 id="___sec0">Introduction </h1>
+</section>
+
+
+<section>
+<h2 id="___sec1">Oslo Cyclotron Laboratory </h2>
+<!-- !bslidecell -->
+
+<ul>
+
+<p><li> Built in 1979.</li>
+
+<p><li> One of three cyclotrons in Norway, only one for ionized atoms.</li>
+
+<p><li> Field of study is primarily nuclear physics/chemistry.</li>
+
+<p><li> Secondarily is the use in nuclear medicine.</li>
+</ul>
+<p>
+
+<!-- !eslidecell -->
+</section>
+
+
+<section>
+<h2 id="___sec2">Oslo Cyclotron Laboratory </h2>
+
+<table border="0">
+<tr>
+<td class="padding">
+Four different particle beams 
+
+<ul>
+
+<p><li> Proton, Deuteron, \( ^{3}\text{He} \) and \( ^{4}\text{He} \)</li>
+
+<p><li> We are interested in the reaction \( ^{28}\text{Si(p, p')}^{28}\text{Si}^* \)</li>
+</ul>
+<p>
+</td>
+<td class="padding">
+<center><p><img src="../figures/nucleus-fixed.png" align="bottom" width=1000></p></center>
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h1 id="___sec3">Method and Results </h1>
+</section>
+
+
+<section>
+<h2 id="___sec4">Experimental Setup </h2>
+
+<table border="0">
+<tr>
+<td class="padding">
+<ul>
+
+<p><li> Cyclotron accelerates 16 MeV proton in a spiralling motion using an electric field.</li>
+
+<p><li> A magnetic field bends the particles trajectory.</li>
+
+<p><li> Particle is then ejected from the cyclotron.</li>
+</ul>
+<p>
+</td>
+<td class="padding">
+<center><p><img src="../figures/cyclotron-schematic-tavernier.png" align="bottom" width=1000></p></center>
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec5">Experimental Setup </h2>
+
+<table border="0">
+<tr>
+<td class="padding">
+<ul>
+
+<p><li> Particle accelerator with CACTUS and SiRi detectors.</li>
+
+<p><li> Spherically distributed NaI scintillators captures photons emitted from excited nucleus.</li>
+
+<p><li> Silicon Ring detects energy of ejected proton.</li>
+</ul>
+<p>
+</td>
+<td class="padding">
+<center><p><img src="../figures/ocl-layout.jpg" align="bottom" width=1000></p></center>
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec6">Data Analysis &#8211; Particle Calibration </h2>
+
+<p>
+
+<table border="0">
+<tr>
+<td class="padding">
+<ul>
+
+<p><li> SiRi consists of eight Silicon pieces.</li>
+
+<p><li> Each of these have two parts: \( \Delta E \) and \( E \).</li>
+
+<p><li> \( \Delta E \) measures an energy loss of proton and \( E \) stops the particle.</li>
+
+<p><li> Divided into another eight strips to measure angle.</li>
+
+<p><li> Approximately linear energy \( E(x) = a + bx \).</li>
+
+<p><li> \( a \) and \( b \) called gain and shift. Adjusted to calibrate detectors.</li>
+
+<p><li> Plot \( \Delta E/E \) and see the bananas.</li>
+</ul>
+<p>
+</td>
+<td class="padding">
+<center><p><img src="../figures/m-e-de-uncalibrated.png" align="bottom" width=1000></p></center>
+
+<p>
+<center><p><img src="../figures/m-e-de-calibrated.png" align="bottom" width=1000></p></center>
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec7">Data Analysis &#8211; Selecting a Reaction </h2>
+
+<p>
+
+<table border="0">
+<tr>
+<td class="padding">
+<ul>
+
+<p><li> Gate on the banana for the ejected proton and sort again.</li>
+
+<p><li> We see the apparent thickness of the \( \Delta E \) detector, which corresponds to the known value 130 \( \mu m \)</li>
+</ul>
+<p>
+</td>
+<td class="padding">
+<center><p><img src="../figures/h-thick-fromcalibrated-zoom.png" align="bottom" width=1000></p></center>
+
+<p>
+<center><p><img src="../figures/m-e-de-thick.png" align="bottom" width=1000></p></center>
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec8">Data Analysis &#8211; Selecting a Reaction </h2>
+
+<p>
+
+<table border="0">
+<tr>
+<td class="padding">
+<ul>
+
+<p><li> We project the coincidence matrix on the y-axis.</li>
+
+<p><li> Excitation energy \( E_x \) vs. photon count</li>
+
+<p><li> Compare to known values for the excitation values of the first six levels.</li>
+</ul>
+<p>
+</td>
+<td class="padding">
+<center><p><img src="../figures/h-ex-calibrated-zoom.png" align="bottom" width=1000></p></center>
+</td>
+</tr>
+</table>
+
+<p>
+<table border="1">
+<thead>
+<tr><td align="center">\( E_x \) [MeV]</td> <th align="center">0.0</th> <th align="center">1779.03</th> <th align="center">4617.86</th> <th align="center">4979.92</th> <th align="center">6276.20</th> <th align="center">6690.74</th> </tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec9">Data Analysis &#8211; Gamma Calibration </h2>
+
+<p>
+
+<table border="0">
+<tr>
+<td class="padding">
+<ul>
+
+<p><li> Correct for the gain and shift as done for SiRi.</li>
+
+<p><li> Leading edge discriminators (LEDs).</li>
+
+<ul>
+
+<p><li> Looks at the leading edge of signal after some threshold.</li>
+
+<p><li> Gives timing variance.</li>
+
+<p><li> Amplitude of signal dependent on energy.</li>
+
+<ul>
+
+<p><li> Curve fitting.</li>
+</ul>
+<p>
+</ul>
+<p><li> Background radiation.</li>
+
+<ul>
+
+<p><li> Start experiment without reaction.</li>
+</ul>
+<p><li> Delayed gamma rays, random coincidences.</li>
+
+<ul>
+
+<p><li> Gate on corresponding peak and substract from the prompt peak.</li>
+</ul>
+<p>
+</ul>
+<p>
+</td>
+<td class="padding">
+<center><p><img src="../figures/m-nai-e-t-corrected.png" align="bottom" width=1000></p></center>
+
+<p>
+<center><p><img src="../figures/m-nai-e-t-corrected-fit.png" align="bottom" width=1000></p></center>
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec10">The Coincidence Matrix </h2>
+
+<p>
+
+<table border="0">
+<tr>
+<td class="padding">
+<ul>
+
+<p><li> The corrected coincidence matrix for \( E_\gamma \) vs. \( E_x \).</li>
+
+<p><li> Particle, gamma and time calibrated, without background raditation.</li>
+</ul>
+<p>
+</td>
+<td class="padding">
+<center><p><img src="../figures/m-alfna-week2.png" align="bottom" width=1000></p></center>
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec11">The Oslo Method </h2>
+
+<table border="0">
+<tr>
+<td class="padding">
+<ul>
+
+<p><li> We find the coincidence matrix to perform the Oslo Method.</li>
+
+<p><li> Can extract the nuclear level density (NLD) \( \rho \) and gamma strength function (GSF) \( \tau \) in one experiment.</li>
+
+<p><li> \( \rho \) and \( \tau  \) can be used to find probaility \( P \) for the reaction</li>
+
+<p><li> \( P(E_x,E_\gamma) \propto \tau (E_\gamma) \cdot \rho(E_x-E_\gamma) \).</li>
+</ul>
+<p>
+</td>
+<td class="padding">
+Three steps:
+
+<ol>
+
+<p><li> Unfolding the gamma ray spectrum.</li>
+
+<p><li> Extracting the 1st gen. gamma rays.</li>
+
+<p><li> Extracting NLD and GSF.</li>
+</ol>
+<p>
+
+Where the last step was not part of our project.
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec12">The Oslo Method &#8211; Unfolding of the Coincidence Matrix </h2>
+
+<table border="0">
+<tr>
+<td class="padding">
+The gamma ray interacts with the detector in several ways:
+
+<ul>
+
+<p><li> Photoelectric effect.</li>
+
+<p><li> Compton scattering</li>
+
+<p><li> Pair production (electron/positron, single or double escape).</li>
+</ul>
+<p>
+
+We <em>unfold</em> the matrix by reducing everything, but the photoelectric effect.
+
+<ul>
+
+<p><li> Need a response matrix \( v_{out} = R v_{in} \). to find the unfolded coincidence matrix.</li>
+</ul>
+<p>
+</td>
+<td class="padding">
+<center><p><img src="../figures/escape-peak.gif" align="bottom" width=1000></p></center>
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec13">The Oslo Method &#8211; Multiplicity </h2>
+
+<table border="0">
+<tr>
+<td class="padding">
+The multiplicity \( \langle M \rangle \) is defined as the average number of gamma rays emitted for a given excitation level \( E_x \).
+</td>
+<td class="padding">
+Two methods:
+
+<ol>
+
+<p><li> \( \langle M \rangle = \frac{E_x}{\langle E_\gamma \rangle} \)</li>
+
+<p><li> \( \langle M \rangle = k\cdot \frac{N_c}{N_s} \)</li>
+
+<ul>
+
+<p><li> \( N_c \) is the coincidence spectrum (proton in coincidence) and \( N_s \) is the single spectrum, corresponding to to our bananas.</li>
+
+<p><li> k is a constant we find by using a known multiplicity.</li>
+</ul>
+<p>
+</ol>
+<p>
+</td>
+</tr>
+</table>
+</section>
+
+
+<section>
+<h2 id="___sec14">Unfolding &#8211; Result </h2>
+<center><p><img src="../figures/alfna-no-background.png" align="bottom" width=1000></p></center>
+</section>
+
+
+<section>
+<h1 id="___sec15">Conclusion </h1>
+</section>
+
+
+<section>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>

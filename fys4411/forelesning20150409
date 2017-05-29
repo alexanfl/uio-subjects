@@ -1,0 +1,35 @@
+Forelesning i FYS4411 9. april
+
+Hartree-Fock algorithm
+
+\phi_{\alphai}^{HF}(x_i) = \phfi
+
+Ansatz for grunntilstanden
+  \Phi_0 = Slaterdeterminant
+
+
+Vi har
+  c_{\alpha_i \beta_j} = <\phi_{\alpha_i}^{HF}|\phi_{\beta_i}>
+
+Basisfunksjon
+  \phi_{\beta_j}(x_i)
+
+HF-algorithm
+  1) Ekspandere \phfi = \sum_{j=1}^{infty}c_{\alpha_i \beta_j} \phi_{\beta_j}(x_i)
+  2) Variere c_{\alpha_i \beta_j} for å finne E[\Phi_0^{HF}] (mha. variasjonsregning)   
+
+  \alpha_i: HF-basis
+  |\alpha_i> -> | i >
+  |\beta_ij>: opprinnelig basis
+  |\beta_ij> -> |\beta>
+  |i> = \sum_{\alpha} c_{i \alpha} |\alpha>
+  E[\Phi_0^{HF}] = \sum_i < i | h_0 | i > + (1/2)\sum_{ij} <ij|v|ij>_{AS}
+  E[\Phi_0^{HF}] = 
+    \sum_{i=1}^{N}\sum_{\alpha, \beta = 0}^{\infty} c_{i\alpha}^* c_{i\beta} <\alpha|h_0|\beta>
+    + (1/2)\sum_{i,j=1}^{N}\sum_{\alpha\beta\gamma\delta} c_{i\alpha}^* c_{j\beta}^* c_{i\gamma} c_{i\delta}
+    <\alpha\beta|v|\gamma\delta>
+  <i|j> = \delta_{ij} = \sum_{\alpha\beta} c_{i\alpha}^* c_{i\beta} <\alpha|\beta>
+    = \sum_{\alpha} c_{i\alpha}^* c_{i\alpha}
+
+
+AS står for anti-symmetrisert.

@@ -1,0 +1,79 @@
+\documentclass[norsk, 12pt]{article}
+\usepackage[norsk]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage{times}			% Default times font style
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+
+\usepackage{hyperref}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{parskip}		% Norske avsnitt
+
+\title{}
+\begin{document}
+\begin{align*}
+	H(0) \cdot \Delta e
+\end{align*}
+
+Pulseksitasjon
+\begin{align*}
+	r(t) &= \frac{H(0)\Delta e}{T_1-T_2}\int_{0}^{\epsilon}\left \{ e^{/(t-\tau)/T_1} - e^{/(t-\tau)/T_1} d\tau \right\}\\
+	\Rightarrow r_p(t) &= H(0)\cdot \Delta e (e^{\epsilon/T_{1,2}}-1)e^{-t_p/T_{1,2}}
+\end{align*}
+
+\section{Example: Harmonic dampened oscillator}
+\begin{align*}
+	m\ddot{r} &= -\mu \dot{r}(t) - k r(t) + e(t)\\
+	\left( ms^2 + s\mu + k \right) R(s) &= E(s) \:\leftarrow \text{Laplace transform}\\
+	R(s) = \frac{1}{ms^2 + s\mu + k} E(s) &= \frac{E(s)}{H(s)}\\
+	s_{1,2} &= \frac{-\mu \pm \sqrt{\mu^2 - 4km}}{2m}
+\end{align*}
+
+Realdelen til polene er negative.
+
+Consider the step excitation 
+\begin{align*}
+	R(s) = \frac{\Delta e}{m(s-s_1)(s-s_2)s}
+\end{align*}
+Use partial fractions on that gives
+\begin{align*}
+	R(s) = \frac{\Delta e}{m(s_1-s_2)(s-s_1)s_1} + \frac{\Delta e}{m(s_2-s_1)(s-s_2)s_2}
+	+ \frac{\Delta e}{ms_1 s_2 s}
+\end{align*}
+\begin{align*}
+	\int_{0}^{\infty}e^{s_1 t} e^{-s t} dt = \frac{1}{s-s_1}
+\end{align*}
+This gives that
+\begin{align*}
+	r(t) = \frac{\Delta e}{m(s_1-s_2)s_1}e^{s_1 t} + \frac{\Delta e}{m(s_2-s_1)s_2} e^{s_2 t}
+	+ \frac{\Delta e}{ms_1 s_2}
+\end{align*}
+
+\subsection{$t=0$}
+\begin{align*}
+	r(0) = \frac{\Delta s_2 - \Delta e s_1 + \Delta e (s_1-s_2)}{m(s_1-s_2)s_1 s_2} = 0
+\end{align*}
+
+\subsection{$t=\infty$}
+\begin{align*}
+	r(\infty) = \frac{\Delta e}{k}
+\end{align*}
+Assume that
+\begin{align*}
+	\frac{k}{m} > \frac{\mu^2}{4m^2}
+\end{align*}
+Then
+\begin{align*}
+	\frac{1}{m(s_1-s_2)s_1} &= |M|e^{i\phi}\\
+	\frac{1}{m(s_2-s_1)s_2} &= |M|e^{-i\phi}
+\end{align*}
+Gives that
+\begin{align*}
+	r(t) = 2\Delta e |M| \cos(\omega t + \phi)e^{-\alpha t} + \frac{\Delta e}{k}
+\end{align*}
+
+\begin{align*}
+	s_1 = -\alpha + i\omega
+\end{align*}
+
+\end{document}

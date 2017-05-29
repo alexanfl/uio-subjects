@@ -1,0 +1,91 @@
+\documentclass[twocolumn,letterpaper,11pt,fleqn]{extarticle}
+\usepackage[english]{babel} 
+\usepackage[latin1]{inputenc} 
+\usepackage{times}			% Default times font style
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+\usepackage{mathtools} 		% Adds the declare paired 
+							% delimeter command to make costom \abs and \norm
+\usepackage{breqn}		 	% Adds dmath environment for automated brakeline
+\usepackage{xfrac}			% Adds slanted fractions (sfrac)
+\usepackage{cancel}			% Adds the cancel command, a slash through the symbol(s)
+\usepackage{tabularx}		% Adds adjustable width on tabulars
+\usepackage{cuted}			% Adds the strip command, pagewidth text in a twocolumn
+							% environment.  
+\usepackage{hyperref}
+\usepackage[letterpaper, margin=0.6in]{geometry}
+
+% Alghorithm packages:
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% Start custom \abs \norm 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+% End custom \abs \norm 
+
+\usepackage{titlesec}
+\titleformat{\section}[block]{\bfseries\filcenter}{\thesection}{1em}{\uppercase}
+\titleformat{\subsection}[hang]{\bfseries\filcenter}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\bfseries\filcenter}{\thesubsubsection}{1em}{}
+
+% TODO: Put comments on this section.
+\newcommand{\eq}[1]{{\small\begin{align*}#1\end{align*}}}
+\newcommand{\equ}[1]{{\small\begin{align}#1\end{align}}}
+\newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\vmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\renewcommand\vec[1]{\mathbf{#1}}
+\newcommand{\OP}[1]{\mathbf{\widehat{#1}}}
+\newcommand{\op}[1]{\hat{#1}}
+\newcommand{\unit}[1]{\mathbf{\hat{#1}}}
+\newcommand{\da}{\dagger}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+
+\title{}
+
+\begin{document}
+
+\twocolumn[{%
+ \centering
+ {\bfseries\large Parabolic Quantum Dots and Hartree-Fock}
+ \\[1em]
+ \normalsize Alexander Fleischer
+ \\
+ \small\url{https://github.com/alexanfl/UiO/tree/master/fys-kjm4480/project1}
+  \begin{abstract}
+    This is where the abstract goes. Write something smrt here.
+  \end{abstract}
+ \\[3em] % some more space after the title part
+}]
+
+
+
+\section{Exercise}
+\subsection{}
+We have that $c_p^\da$ and $c_p$ are creation and annihilation operators for $\phi_p$.
+The second-quantized forms of the spin and angular momentum operators,
+$\op L_z$ and $op S_z$, can then
+be written on the form
+\begin{align*}
+	\op A = \sum_{p,p'} \la \phi_p | A | \phi_{p'}  \ra  c_p^\da c_{p'}
+\end{align*}
+\label{sub:}
+
+\label{sec:}
+
+\end{document}

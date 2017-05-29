@@ -1,0 +1,67 @@
+\documentclass[norsk, 12pt]{article}
+\usepackage[norsk]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage{times}			% Default times font style
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+
+\usepackage{hyperref}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{parskip}		% Norske avsnitt
+
+\title{Some Lecture Notes in FYS-KJM4480}
+\begin{document}
+\section{September 3rd 2015}
+\label{sec:1}
+\textbf{Exercises to be handed in September 10th: 1.2, 1.4, 1.6, 1.8}
+\subsection{Occupation Number Representation}
+\label{sub:1}
+Given $\phi_{\mu} \in L^2(x)$. SLater determinants $|\mu_1,...,\mu_N\rangle$
+Let $\sigma \in S_N$ and $\nu_j = \mu_{\sigma(j)}$
+
+\begin{align*}
+	|\nu_1, ..., \nu_N\rangle = (-1)^{|\sigma|} |\mu_1,...,\mu_N\rangle
+\end{align*}
+Let $\sigma$ be such that $\nu_1<...<\nu_N$. $\vec \nu$ is sorted.
+
+\begin{align*}
+	|\Psi\rangle = \sum_{\nu_1<...<\nu_N}^{}C_{\nu_1...\nu_N}|\nu_1,...,\nu_N\rangle
+\end{align*}
+
+Assorted set of N integers $\vec \nu = \nu_1\{ \nu_2,...,\nu_N \}$
+can be represented as a subset of $\{\nu_1,...,\nu_N\}$.
+
+\textbf{Occupation numbers:}\\
+Given index $\mu$: $n_{\mu}\in \{ 0,1 \}$. Binary expansion of $\vec \nu$.
+\begin{align*}
+	|n_0 ...\rangle
+\end{align*}
+
+For example:\\
+\begin{align*}
+	|2,6,8\rangle &= |0_0, 0_1, 1_2, 0_3, 0_4, 0_5, 1_6, 0_7, 1_8\rangle\\
+	&= c_2 c_6 c_8|-\rangle\\
+	&= -c_6^{\dagger} c_2^{\dagger} c_8^{\dagger}|-\rangle\\
+	&=-|6,2,8\rangle
+\end{align*}
+\subsection{Orbital Diagrams and Spin Orbitals}
+\label{sub:}
+Consider N electrons: Config space of 1 $e^-$ is
+\begin{align*}
+	X = R^3 \otimes \{ +1, -1 \}\\
+	x = (\vec r, \sigma)
+\end{align*}
+% subsection  (end)
+Varying notation for spin:
+\begin{align*}
+	\{ 1/2, -1/2\},\: \{\alpha, \beta \}
+\end{align*}
+
+\subsection{Fock Space}
+Recall $L^2(X^N) = L^2_N$ has a basis of Slater determinatnts: $|n_0...n_{\mu}...\rangle$ ($N$ bits)
+
+If we act with $c^{\dagger}_{\mu}|...\rangle$, we get $|n'_0...\rangle$ ($N+1$ bits)
+
+\section{September 4th 2015}
+
+\end{document}

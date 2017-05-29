@@ -1,0 +1,11 @@
+\select@language {english}
+\contentsline {section}{\numberline {I.}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {II.}Method}{1}{section.2}
+\contentsline {subsection}{\numberline {A.}Data analysis}{1}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {A1.}Particle Calibration}{1}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {A2.}Selecting a Reaction}{1}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {A3.}Gamma Calibration}{1}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {A4.}Treatment of Time Signals}{1}{subsubsection.2.1.4}
+\contentsline {subsubsection}{\numberline {A5.}The Coincidence Matrix}{1}{subsubsection.2.1.5}
+\contentsline {subsection}{\numberline {B.}Unfolding of the Coincidence Matrix}{1}{subsection.2.2}
+\contentsline {subsection}{\numberline {C.}Multiplicity}{1}{subsection.2.3}

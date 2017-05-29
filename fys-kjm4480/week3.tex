@@ -1,0 +1,298 @@
+\documentclass[12pt]{article} 
+\usepackage[utf8]{inputenc}
+\usepackage{times}			% Default times font style
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage[fleqn]{amsmath} 		% Math package
+\usepackage{amssymb} 		% Math symbols package
+\usepackage{mathtools} 		% Adds the declare paired 
+\usepackage{simplewick}
+
+\usepackage{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+
+% colored box
+\usepackage[most]{tcolorbox}
+
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\vm}[1]{\begin{vmatrix}#1\end{vmatrix}}
+
+% Start custom \abs \norm 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Short italic command
+\newcommand{\ita}[1]{\textit{#1}}
+
+% Math commands
+\newcommand{\eq}[1]{{\begin{align*}#1\end{align*}}}
+\newcommand{\ma}[1]{$#1$}
+\newcommand{\equ}[1]{{\begin{align}#1\end{align}}}
+\newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
+\renewcommand\vec[1]{\boldsymbol{\mathbf{#1}}} % Bold vectors instead of arrow 
+\newcommand{\OP}[1]{\mathbf{\widehat{#1}}}
+\newcommand{\op}[1]{\hat{#1}}
+\newcommand{\unit}[1]{\mathbf{\hat{#1}}}
+\newcommand{\da}{\dagger}
+
+\title{}
+\begin{document}
+\tcbset{width=\textwidth,colback=black!5!white,colframe=black!60!white,
+arc=0pt,outer arc=0pt}
+\paragraph{Exercise 1.20.}
+\label{par:ex1.20}
+\begin{itshape}
+We want to show that
+\eq{
+\contraction{}{X}{}{Y}
+XY
+= XY-N(XY)
+}
+using
+\eq{
+\contraction{}{X}{}{Y}
+XY
+\equiv \la - | XY | - \ra
+}
+where $X$ and $Y$ are arbitrary creation and annihilation operators.
+
+$N$ is the operator that brings a string of creation and annihilation operators
+$A_1\cdots A_N$ to a desired order such that
+
+\begin{align}
+N(A_1\cdots A_N) &\equiv  (-1)^{\abs{\sigma}}[\text{creation operators}]
+    \cdot[\text{annihilation operators}] \nonumber\\
+    &=(-1)^{\abs{\sigma}}A_{\sigma(1)}\cdots A_{\sigma(N)}\label{eq:1.20.1}
+\end{align}
+where $\sigma$ is the permutation.
+\end{itshape}
+\\
+
+\begin{tcolorbox}[title = Exercise 1.20. // Solution]
+We consider the four cases possible, 
+where $X \in \{c_{\mu},c^\da_{\mu}\}$ and
+$Y \in \{c_{\nu},c^\da_{\nu}\}$
+\eq{
+\contraction{}{X}{}{Y}
+XY
+&\equiv
+\la - | XY | - \ra\\
+&=
+\begin{cases}
+    \la - | c_{\mu}^\da c_{\nu}^\da | - \ra = 0\\
+    \la - | c_{\mu} c_{\nu} | - \ra = 0\\
+    \la - | c_{\mu}^\da c_{\nu} | - \ra 
+    = \la - | (\delta_{\nu,\mu} - c_{\nu} c_{\mu}^\da) | - \ra 
+    = \delta_{\nu,\mu} - \delta_{\mu,\nu}= 0\\
+    \la - | c_{\mu} c_{\nu}^\da | - \ra = \delta_{\mu,\nu}
+\end{cases}\\
+&=
+\begin{cases}
+    c_{\mu}^\da c_{\nu}^\da - c_{\mu}^\da c_{\nu}^\da
+    = c_{\mu}^\da c_{\nu}^\da + N(c_{\nu}^\da c_{\mu}^\da)\\
+    c_{\mu}c_{\nu} - c_{\mu}c_{\nu}
+    = c_{\mu}c_{\nu} + N(c_{\nu}c_{\mu})\\
+    c_{\mu}^\da c_{\nu} - c_{\mu}^\da c_{\nu}
+    = c_{\mu}^\da c_{\nu} + N(c_{\nu}c_{\mu}^\da)\\
+    c_{\mu}c_{\nu}^\da + c_{\nu}^\da c_{\mu}
+\end{cases}\\
+&=
+\begin{cases}
+        c_{\mu}^\da c_{\nu}^\da -N(c_{\mu}^\da c_{\nu}^\da)\\
+        c_{\mu}c_{\nu} - N(c_{\mu}c_{\nu})\\ 
+        c_{\mu}^\da c_{\nu} - N(c_{\mu}^\da c_{\nu})\\
+        c_{\mu}c_{\nu}^\da - N(c_{\mu}c_{\nu}^\da)
+\end{cases}\\
+&= XY-N(XY)
+}
+since we do one permutation and thus contract a minus sign.
+\end{tcolorbox}
+
+\newpage
+\paragraph{Exercise 1.21.}
+\label{par:ex1.21}
+
+\begin{itshape}
+	We want to prove that for any permutation $\sigma \in S_N$,
+    \equ{
+        N(A_1\cdots A_N) &= (-1)^{\abs{\sigma}} 
+        N(A_{\sigma(1)}\cdots A_{\sigma(N)})\label{eq:1.21.1}
+    }
+\end{itshape}
+\begin{tcolorbox}[title = Exercise 1.21. // Solution, breakable]
+Assume that we have a string of creation and annihilation operators
+arbitrarily ordered on the form 
+$A_1 \cdots A_N$,
+and that we perform a permutation $\sigma_1$
+so that we get the normal-ordered equation
+\begin{align*}
+    N(A_1\cdots A_N) 
+    &= (-1)^{\abs{\sigma_1}}A_{\sigma_1(1)}\cdots A_{\sigma_1(N)}\\
+    &= (-1)^{\abs{\sigma_1}}[\text{creation operators}]
+    \cdot[\text{annihilation operators}]
+\end{align*}
+Since $\{c_{\mu}^\da, c_{\nu}^\da\} = 0$ (and likewise for annihilation operators),
+we can interchange operators on each side of the dot
+and still have a normal ordering, 
+as long as we remember the sign change for each permutation.
+This means that
+\begin{align*}
+	N(A_1\cdots A_N) &= (-1)^{\abs{\sigma_1}}(-1)^{\abs{\sigma_2}}
+	A_{\sigma_2(\sigma_1(1))}\cdots A_{\sigma_2(\sigma_1(N))}\\
+	&=(-1)^{\abs{\sigma_1}} N(A_{\sigma_1(1)} \cdots A_{\sigma_1(N)})
+\end{align*}
+
+\end{tcolorbox}
+
+\paragraph{Exercise 1.24.}
+\label{par:ex1.24}
+
+\begin{itshape}
+    We let $\vec\mu = (\mu_1\cdots \mu_N)$ for $N\geq 2$, 
+    and want to compute the matrix elements $\la \vec\mu | \op H_0 | \vec\mu \ra$
+    and $\la \vec\mu | \op W | \vec\mu \ra$ using \emph{Wick's theorem} applied to
+    vaccum expectation values.
+\end{itshape}\\
+
+\begin{tcolorbox}[title = Exercise 1.24. // Solution, breakable]
+	The operators in terms of creation and annihilation operators are
+    \eq{\op H_0 &= \sum_{\mu,\nu} \la \mu | \op h | \nu \ra c_\mu^\da c_\nu\\
+    \op W &= \frac{1}{4}\sum_{\substack{\nu_1,\nu_2\\ \mu_1,\mu_2}}^{N}
+    \la \mu_1\mu_2 | \op w | \nu_1\nu_2 \ra c_{\mu_1}^\da c_{\mu_2}^\da c_{\nu_1}c_{\nu_2}
+    }
+    and $\vec\mu = c^\da_{\mu_1}\cdots c^\da_{\mu_N}|-\ra$ means that
+    \begin{align*}
+	    \la \vec\mu | \op H_0 | \vec\mu \ra 
+	    &= \sum_{\mu,\nu}\la \mu | \op h | \nu \ra
+	        \la - | c_{\nu_N}\cdots c_{\nu_1}c_{\mu}^\da 
+	        c_{\nu} c_{\mu_1}^\da\cdots c_{\mu_N}^\da| - \ra\\
+	    &=\sum_{\mu,\nu}\la \mu | \op h | \nu \ra
+	        \la - | \nu_N\cdots \nu_1\mu^\da 
+	        \nu \mu_1^\da \cdots \mu_N^\da| - \ra\\
+	    \la \vec\mu | \op W | \vec\mu \ra 
+	    &= \sum_{\substack{\alpha_1,\alpha_2\\\beta_1,\beta_2}}
+	        \la \alpha_1\alpha_2 | \op w | \beta_1\beta_2 \ra
+	        \la - | c_{\nu_N}\cdots c_{\nu_1} c_{\alpha_1}^\da c_{\alpha_2}^\da
+	        c_{\beta_2} c_{\beta_1} c_{\mu_1}^\da\cdots c_{\mu_N}^\da| - \ra
+    \end{align*}
+    Using Wick's theorem for expectation values, given even $n$ (odd $n$ gives zero),
+    we get
+    \begin{align*}
+	    \la - | \nu_N\cdots \nu_1\mu^\da 
+	        \nu \mu_1^\da \cdots \mu_N^\da| - \ra
+	    &=\sum_{\substack{\text{all contr.}\\n+1}}
+	    N(\contraction{}{\nu_n}{\cdots\nu_1}{\mu^\da}
+	    \contraction[2ex]{\nu_n}{\cdots\nu}{\nu_1\mu^\da}{\nu}
+	    \contraction{\nu_n\cdots\nu_1\mu^\da}{\nu}{\mu_1^\da}{\cdots}
+	    \contraction[3ex]{\nu_n}{\cdots}{\nu_1\mu^\da\nu\mu_1^\da\cdots}{\mu_n^\da}
+	    \nu_n\cdots\nu_1\mu^\da\nu\mu_1^\da\cdots\mu_n^\da)
+    \end{align*}
+    where at least one of the first $\nu_n\cdots\nu_1$ must contract with $\mu^\da$,
+    all other contractions give zero.
+    Each of these contractions give 
+    $\contraction{}{\nu_x}{}{\mu_y^\da}\nu_x\mu_y^\da = \delta_{\nu_x\mu_y}$.
+    The sign of each term in the sum is $(-1)^k$ where $k$ is the number of
+    crossing contraction lines.
+        
+    For $N=2$ we have
+    \begin{align*}
+	    \la - | \nu_2\nu_1\mu^\da 
+	        \nu \mu_1^\da\mu_2^\da| - \ra
+        &= N(
+        \contraction{}{\nu_2}{\nu_1}{\mu^\da}
+        \contraction[2ex]{\nu_2}{\nu_1}{\mu^\da \nu}{\mu_1^\da}
+        \contraction{\nu_2\nu_1\mu^\da}{\nu}{\mu_1^\da}{\mu_2^\da}
+        \nu_2\nu_1\mu^\da \nu \mu_1^\da\mu_2^\da
+        +
+        \contraction{}{\nu_2}{\nu_1}{\mu^\da}
+        \contraction[2ex]{\nu_2}{\nu_1}{\mu^\da \nu\mu_1^\da}{\mu_2^\da}
+        \contraction{\nu_2\nu_1\mu^\da}{\nu}{}{\mu_1^\da}
+        \nu_2\nu_1\mu^\da \nu \mu_1^\da\mu_2^\da
+        +
+        \contraction{}{\nu_2}{\nu_1\mu^\da\nu}{\mu_1^\da}
+        \contraction[2ex]{\nu_2}{\nu_1}{}{\mu^\da}
+        \contraction[2ex]{\nu_2\nu_1\mu^\da}{\nu}{\mu_1^\da}{\mu_2^\da}
+        \nu_2\nu_1\mu^\da \nu \mu_1^\da\mu_2^\da+
+        \contraction{}{\nu_2}{\nu_1\mu^\da\nu\mu_1^\da}{\mu_2^\da}
+        \contraction[2ex]{\nu_2}{\nu_1}{}{\mu^\da}
+        \contraction[2ex]{\nu_2\nu_1\mu^\da}{\nu}{}{\mu_2^\da}
+        \nu_2\nu_1\mu^\da \nu \mu_1^\da\mu_2^\da
+        )\\
+    &=\delta_{\nu_2\mu,\nu_1\mu_1,\nu\mu_2}
+    -\delta_{\nu_2\mu,\nu_1\mu_2,\nu\mu_1}
+    -\delta_{\nu_2\mu_1,\nu_1\mu,\nu\mu_2}
+    +\delta_{\nu_2\mu_2,\nu_1\mu,\nu\mu_1}
+    \end{align*}
+    where $\delta_{ab,cd,ef}=\delta_{ab}\delta_{cd}\delta_{ef}$.
+    \begin{align*}
+	    (\delta_{\nu_2\mu,\nu_1\mu_1,\nu\mu_2}
+    -\delta_{\nu_2\mu,\nu_1\mu_2,\nu\mu_1}
+    -\delta_{\nu_2\mu_1,\nu_1\mu,\nu\mu_2}
+    +\delta_{\nu_2\mu_2,\nu_1\mu,\nu\mu_1})
+    \end{align*}
+\end{tcolorbox}
+
+\paragraph{Exercise 1.26.}
+\label{par:ex1.26}
+
+\begin{itshape}
+    Given the quasiparticle creation and annihilation operators
+    \equ{b_i = c_i^\da, \quad b_a = c_a\label{eq:1.26.1}}
+    we want to show that
+    \eq{\{b_\mu,b_\nu^\da\} = \delta_{\mu,\nu},\quad \{b_\mu,b_\nu\} = 0}
+    for $\mu,\,\nu = i,\,j \leq N$ and $\mu,\,\nu = a,\,b > N$.
+\end{itshape}\\
+\begin{tcolorbox}[title = Exercise 1.26. // Solution, breakable]
+    From the relations (\ref{eq:1.26.1}) and from exercise 1.20, we 
+    have that
+    \begin{align*}
+	    \{b_\mu,b_\nu^\da\} &=
+	    \begin{cases}
+	        \{b_i,b_j^\da\} = c_i^\da c_j + c_j c_i^\da = \{c_i^\da,c_j\} = \delta_{i,j}\\
+	        \{b_i,b_b^\da\} = c_i^\da c_b^\da + c_b^\da c_i^\da = \{c_i^\da,c_b^\da\} = 0
+	            = \delta_{i,b}\\
+	        \{b_a,b_j^\da\} = c_a c_j + c_j c_a = \{c_a,c_j\} = 0
+	            = \delta_{a,j}\\
+	        \{b_a,b_b^\da\} = \{c_a,c_b^\da\} = \delta_{a,b}
+        \end{cases}\\
+        &= \delta_{\mu,\nu}\\
+    \end{align*}
+    and
+    \begin{align*}
+	     \{b_\mu,b_\nu\} &=
+	    \begin{cases}
+	        \{b_i,b_j\} = c_i^\da c_j^\da + c_j^\da c_i^\da 
+	            = \{c_i^\da,c_j^\da\} = 0 \\
+	        \{b_i,b_b\} = c_i^\da c_b + c_b c_i^\da = \{c_i^\da,c_b\} = \delta_{i,b} = 0\\
+	        \{b_a,b_j\} = c_a c_j^\da + c_j^\da c_a = \{c_a,c_j^\da\} = \delta_{a,j} = 0\\
+	        \{b_a,b_b\} = \{c_a,c_b\} = 0
+        \end{cases}\\
+        &= \delta_{\mu,\nu}
+    \end{align*}
+    since $\delta_{x,y} = 0$ whenever $x\in\{i,j\}$, $y\in\{a,b\}$.
+    Also, anticommutation and Kronecker delta properties give
+    $\{x,y\} = \{y,x\}$ and $\delta_{x,y} = \delta_{y,x}$.
+\end{tcolorbox}
+
+\paragraph{Exercise 1.28.}
+\label{par:ex1.28}
+
+\begin{itshape}
+    Given the equation
+    \begin{align}
+	    \la \Phi | c_i^\da c_j | \Phi \ra
+        = \la \Phi | b_i b_j^\da | \Phi \ra
+        = \contraction{}{b_i}{}{b_j^\da} b_i b_j^\da
+        = \delta_{i,j}\label{eq:1.28.1}
+    \end{align}
+    where $|\Phi\ra = |1 \cdots N\ra = c_1^\da \cdots c_N^\da |-\ra$ 
+    acts as the vacuum state for the quasiparticle operators
+    from (\ref{eq:1.26.1}), we want to use Wick's theorem to compute the
+    vacuum expectation values.
+\end{itshape}
+
+\begin{tcolorbox}[title = Exercise 1.28. // Solution, breakable]
+    
+\end{tcolorbox}
+
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass[norsk, 12pt]{article}
+\usepackage[norsk]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage{times}			% Default times font style
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+
+\usepackage{hyperref}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{parskip}		% Norske avsnitt
+
+\title{}
+\begin{document}
+\subsection{Exercise 1.4}
+
+\begin{align*}
+	\prod_{i=1}^N \phi_{\sigma(i)} (x_i)
+	&= \phi_{\sigma(1)} (x_1)\cdots \phi_{\sigma(N)} (x_N)\\
+	&=\Phi_{\sigma(1),...,\sigma(N)}(x_1,...,x_N)\\
+	&=P_{\sigma}\Phi_{1,...,N}(x_{\sigma(1)},...,x_{\sigma(N)})\\
+	&=P_{\sigma} \phi_1 (x_{\sigma(1)})\cdots \phi_N(x_{\sigma(N)})\\
+	&=P_{\sigma} \prod_{i=1}^N \phi_i (x_{\sigma(i)})\\
+	&=s_{\sigma} \prod_{i=1}^N \phi_i (x_{\sigma(i)})
+\end{align*}
+
+\end{document}

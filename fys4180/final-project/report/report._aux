@@ -1,0 +1,70 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\select@language{english}
+\@writefile{toc}{\select@language{english}}
+\@writefile{lof}{\select@language{english}}
+\@writefile{lot}{\select@language{english}}
+\@writefile{toc}{\contentsline {section}{\numberline {I.}Introduction}{1}{section.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The different beams that are used at the OCL.}}{1}{table.1}}
+\newlabel{tab:beams}{{1}{1}{The different beams that are used at the OCL}{table.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Our reaction $^{28}\text  {Si(p, p')}^{28}\text  {Si}^*$ visualised with incoming proton, nucleus and the CACTUS and SiRi detectors.}}{1}{figure.1}}
+\newlabel{fig:28si}{{1}{1}{Our reaction $^{28}\text {Si(p, p')}^{28}\text {Si}^*$ visualised with incoming proton, nucleus and the CACTUS and SiRi detectors}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {II.}Method}{2}{section.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.}Experimental Setup}{2}{subsection.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The accelerator layout used at the OCL.}}{2}{figure.2}}
+\newlabel{fig:accelerator}{{2}{2}{The accelerator layout used at the OCL}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Schematic representation of a cyclotron [1]. Tavernier}}{2}{figure.3}}
+\newlabel{fig:cyclotron}{{3}{2}{Schematic representation of a cyclotron [1]. Tavernier}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.}Data analysis}{2}{subsection.2.2}}
+\@writefile{toc}{\contentsline {paragraph}{Particle Calibration}{2}{paragraph*.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The $\sfrac {\Delta E}{E}$ plot showing the result of the }}{3}{figure.4}}
+\newlabel{fig:bananas-plain}{{4}{3}{The $\sfrac {\Delta E}{E}$ plot showing the result of the}{figure.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Selecting a Reaction}{3}{paragraph*.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The apparent thickness of the detector, given by the interacting particles.}}{3}{figure.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces }}{3}{figure.6}}
+\newlabel{fig:de-thickness}{{6}{3}{}{figure.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Gamma Calibration}{3}{paragraph*.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The plot of the response from all of the 28 (26) NaI detectors, with photon count on the $z$-axis.}}{4}{figure.7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces }}{4}{figure.8}}
+\newlabel{fig:time-uncorrected}{{8}{4}{}{figure.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.}The Oslo Method}{4}{subsection.2.3}}
+\@writefile{toc}{\contentsline {paragraph}{Unfolding of the Coincidence Matrix}{4}{paragraph*.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces A typical spectrum of detected energies in a gamma ray detector.}}{5}{figure.9}}
+\newlabel{fig:peaks}{{9}{5}{A typical spectrum of detected energies in a gamma ray detector}{figure.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{Multiplicity}{5}{paragraph*.5}}
+\newlabel{eq:M1}{{1}{5}{Multiplicity}{equation.2.1}{}}
+\newlabel{eq:M2}{{2}{5}{Multiplicity}{equation.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Here we see the different paths a gamma ray can go from its start energy (excited state) down to the ground state. The first generation photons are the red arrows.}}{5}{figure.10}}
+\newlabel{fig:squiggly-states}{{10}{5}{Here we see the different paths a gamma ray can go from its start energy (excited state) down to the ground state. The first generation photons are the red arrows}{figure.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III.}Results}{5}{section.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The $\sfrac {E}{\Delta E}$ plot after calibration of the SiRi detector.}}{5}{figure.11}}
+\newlabel{fig:bananas-plain-calibrated}{{11}{5}{The $\sfrac {E}{\Delta E}$ plot after calibration of the SiRi detector}{figure.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Gating on a calibrated banana. This shows that we remove the data which we are not interested in.}}{6}{figure.12}}
+\newlabel{fig:bananas-gated}{{12}{6}{Gating on a calibrated banana. This shows that we remove the data which we are not interested in}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Projection of the coincidence matrix on the $y$-axis for the excitation energy $E_x$ vs. the number of photons counted. We see that the first six peaks corresponds to the known values for the excitation values of $^{28}\text  {Si}$.}}{6}{figure.13}}
+\newlabel{fig:excited-states}{{13}{6}{Projection of the coincidence matrix on the $y$-axis for the excitation energy $E_x$ vs. the number of photons counted. We see that the first six peaks corresponds to the known values for the excitation values of $^{28}\text {Si}$}{figure.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The first six excitation levels of $^{28}\text  {Si}$ from NNDC.}}{6}{table.2}}
+\newlabel{tab:excited-nucleii}{{2}{6}{The first six excitation levels of $^{28}\text {Si}$ from NNDC}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Plot of the corrected energy of all the detectors from CACTUS vs. the time channels, with a curve fitting.}}{6}{figure.14}}
+\newlabel{fig:time-corrected}{{14}{6}{Plot of the corrected energy of all the detectors from CACTUS vs. the time channels, with a curve fitting}{figure.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces The coincidence matrix after corrections of both the SiRi detector and the CACTUS detector as well as removal of the background radiation and random coincidences.}}{6}{figure.15}}
+\newlabel{fig:coincidence-corrected-final}{{15}{6}{The coincidence matrix after corrections of both the SiRi detector and the CACTUS detector as well as removal of the background radiation and random coincidences}{figure.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces The final result. The corrected coincidence matrix callibrated, and unfolded.}}{7}{figure.16}}
+\newlabel{fig:refolded-matrix}{{16}{7}{The final result. The corrected coincidence matrix callibrated, and unfolded}{figure.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV.}Conclusion}{7}{section.4}}

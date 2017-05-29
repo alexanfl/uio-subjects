@@ -1,0 +1,89 @@
+\documentclass[norsk, 12pt]{article}
+\usepackage[norsk]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage{times}			% Default times font style
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+
+\usepackage{hyperref}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{parskip}		% Norske avsnitt
+
+\title{}
+
+\begin{document}
+
+Første forelesning i FYS4180 – Eksperimentelle metoder i fysikk
+
+  - Målefeil: konstante og systematise avvik, gjentar seg på samme måte. Kan ofte korrigeres.
+
+  - Måleusikkerhet: avvik av statistisk natur. Fordi resultatene er usystematiske, kan vi ikke forutsi avviket.
+    Kan gjøre flere eksperimenter for å finne en bedre middelverdi.
+    Kan ofte reduseres ved å definere måleobjektet skarpere.
+    Angi usikkerheten i siste desimal.
+
+  Fordelingsfunksjoner og histogrammer
+    - Deler opp i intervaller (bins) av dx
+    - Hvor mange målinger finner man i det intervallet.
+    - f_k er antallet målinger i [x_k, x_k + dx]
+    - Etter N målinger, N = \sum_{k} f_k
+    - Får ut et histogram.
+    - Når man har uendelig god oppløsning, får man fordelingsfunksjonen:
+      
+      p(x) = \lim_{N\rightarrow\infty} \lim_{dx\rightarrow 0} f_k/(N dx)
+    
+    - p(x)dx er sannsynligheten for å finne en måling i intervallet [x, x + dx]
+    - p(x) er normert.
+    - Definerer en middelveri, gitt uendelig god oppløsning:
+    
+      <f(x)> = \int_{-infty}^{infty} f(x) p(x) dx
+
+    - «sann verdi» av måling: X \equiv <x>, der <x> = \int_{-infty}^{infty} x p(x) dx.
+    
+    - Varians til fordelingsfunksjon:
+
+      \sigma^2 = \int_{-infty}^{infty} (x - X) p(x) dx
+
+    - Standardavviket er \sigma.
+
+    - Gjentagelsesmålinger
+      - x_1, …, x_n
+      - Definerer middelverdien av målingene:
+        
+        \xbar = \frac{1}{n}\sum_{i=1}^n x_i
+
+      - Avvikk av enkeltmåling fra sann verdi:
+        
+        e_i = x_i - X
+
+      - Avviket av middelverdi fra sann verdi:
+
+        E = \xbar - X
+
+        E = \frac{1}{n}\sum_i (x_i - X) = \frac{1}{n}\sum e_i
+
+        E^2 = \frac{1}{n^2}\sum_i e_i + \frac{1}{n^2}\sum_i \sum_{j\neq i} e_i e_j
+
+        <E^2> = \frac{1}{n^2}\sum <e_i^2> + \frac{1}{n^2} \sum_{j\neq i} <e_i e_j>
+
+Hvis e_i og e_j er uavhengige:
+      
+\begin{equation}
+    <e_i e_j> = <e_i><e_j>\\
+    <e_i> = <x_i - X> = <x_i> - X = X - X = 0
+\end{equation}
+    
+begin{equation}
+	\sigma_m^2 \equiv <E^2> = <(\xbar- X)^2>\\
+	\sigma^2 = <e^2>
+\end{equation}
+
+PUTT INN RESTEN AV VERDIENE FRA SQUIERES HER
+
+\begin{equation}
+	s^2 \frac{1}{n}\sum_i (x_i - \xbar)^2
+	= \frac{1}{n}\sum_i (e_i - E)^2
+	= \frac{1}{n}\sum_i e_i^2 - \frac{2}{n}\sum_i e_i E - \frac{1}{n} - sum_i E^2
+\end{equation}
+
+\end{document}

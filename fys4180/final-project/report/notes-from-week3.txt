@@ -1,0 +1,63 @@
+[FIGURE 1]
+
+Peaks are not aligned due to differences in the electronics of each the 
+64 detectors. 
+
+It doesn't matter if we align to channel 250 or 100.
+
+Find the peak of all gates, then open gainshifts_plain.dat 
+and correct them (to f.ex. channel 100).
+
+When we have aligned all gates and made another gainshifts.dat, 
+we open the batch file and uncomment/comment the new/old gainshift file.
+
+The smaller time window builds the peaks. 
+(???->har vel noe å gjøre med det under)
+
+Thee time of the large tie windows is ~1200 ns, we delay the NaI with 
+~460 ns, and see what we get in that time window.
+
+The 1200 ns time window corresponds to the 512 channels.
+
+We find that (1200 ns)/(512 ch) ~ 2.344 ns/ch
+and that there 6 channels in the FWHM. 
+[FIGURE 2]
+=> (6 ch)*2.344 ns/ch ~ 15 ns
+[FIGURE 3]
+=> (24 ch)*2,344 ns/ch ~ 50 ns
+between the beam pulses. (Easier to calculate between the small peaks.)
+
+In our time window, we might get a \gamma corresponding to a
+previously excited nucleus that coincidentally emits during our time frame,
+though it is unlikely.
+
+To remove the background noise, we start the experiment without any
+reactions, and record, then substract this data from the actual data.
+
+In the sorting code (starting at line 567), we see that we sort out
+things outside the "prompt peak" ("na_t_c").
+[FIGURE 4]
+and subtract it as background (weight = -1), 
+and gate around the prompt peak.
+We only subtract one peak (same lenght as the prompt peak).
+
+Steps: align, correct, gate.
+
+[FIGURE 5]
+
+Discriminators choose signals that are above some threshold. 
+There are two types:
+    * Leading Edge Discriminators (LEDs)
+    * Constant Fraction Discriminators (CFDs)
+
+CFD looks at the maximum amplitude and (… fraction (???))
+LED gives more things to correct, but are cheaper.
+
+Looking at the m_nai_e_t_corrected.eps plot, we see that small energies 
+are found higher up on the y-axis (later in time).
+[FIGURE 6]
+
+Correct the results in root: graph->…
+add the $p_0 \cdots p_3$ values to the batch file and do
+the same for SiRi (we did it first for CACTUS).
+Should do this several times to get a pretty result.

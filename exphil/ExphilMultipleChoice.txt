@@ -1,0 +1,208 @@
+Multiple Choice         Exphil         H12                              joakimmj
+--------------------------------------------------------------------------------
+* Exphil I: Filosofi og vitenskapshistorie
+
+** Platon (429-347)
+   ("Menon", "Staten")
+   - Hva er dyd? En karaktertilstand
+   - De fire kardinaldydene:
+        - visdom*
+        - mot*
+        - måtehold/sindighet*
+        - rettferdighet
+     * Platons tre sjeledeler
+
+   - De fire erkjennelsesnivåer:
+        - oppfatning
+        - sann oppfatning
+        - gjenerindring
+        - viten
+   - Kan ikke besitte en dyd -> alle
+
+** Aristoteles (384-322)
+   ("Metafysikken", "Om sjelen", "Den nikomakiske etikk", "Politikken")
+   - Eudaimonia
+   - Menneske som "zoon politikon"
+   - Vitenskap:
+        - Praktisk
+        - Produktiv
+        - Teoretisk
+   - Umulig å skille form og stoff -> menneskets form og stoff er sjel og
+     legeme -> Dødelig sjel
+   - Hva er lykken?
+        - virkeliggjøre sin natur og oppnå sine mål -> lykkes
+   - "Kvinnen har mangelfull dyd, og mannen skal styre sin kone som en statsmann"
+   - teleogisk
+   - 4 typer årsaker
+
+** Descartes (1596-1650)
+   ("Meditasjoner over filosofiens grunnlag", "Om metoden")
+   - Ekte sannhet -> fornuft
+   - Konglekjertelen -> link mellom sjel og legeme
+   - Tre enkle og innlysende sannheter:
+        - "Cogito, ergo sum" (jeg tenker, altså er jeg)
+        - Årsaksforestillingen (ingen virkning uten årsak, ikke mer virkning
+          enn i årsaken.
+        - Gudsforestillingen (forestilling av et fullkomment vesen)
+   - Kartesisk (latin: Cartesius): Descartes
+   - Mekanisme
+   - reskogtans -> tenkende ting
+
+** Hume (1711-1776)
+   ("En sammenfatning av en nylig utgitt bok, kalt En avhandling om
+   menneskenaturen, osv.")
+   - Antimetafysiker
+   - Naturalist
+   - kopiprinsippet (ideér må kunne føres tilbake til inntrykk)
+   - Kunstig dyd
+   - Empirist
+   - Persepsjoner (byggeklossene i menneskets erkjennelse av verden) deles inn
+     i inntrykk og ideer
+   - Den naturalistiske feilslutning
+        er hvis man trekker slutninger fra er til bør (noe Hume mener er feil)
+   - Moralen er ikke objektiv (basert på fornuften), men subjektiv (basert på
+     følelser)
+
+** Kant (1724-1804)
+   ("Kritikk av den rene fornuft", "Grunnlegging til moralens metafysikk",
+   "Moralens metafysikk", "Antropologi i pragmatisk perspektiv")
+   - Sinnelagsetikk -> intensjonen med handlingen er det som teller
+   - Kants kopernikanske vending:
+        gjenstandene retter seg etter vår erkjennelse
+   - Eneste man kan ha sikker viten om; metafysikken
+   - Pliktetiker
+   - Analytisk dom; dom der det ene begrepet allerede inneholder det andre
+        eks: alle legemer har utstrekning
+   - Syntetisk dom; dom der det ene begrepet er forklart gjennom det andre
+        eks: noen legemer er tunge
+   - a posteriori; bygger på erfaring
+   - a priori; forut for erfaring
+   - Tingene i seg selv kan ikke erkjennes
+   - Ting kan kun erkjennes som fremtredelse, altså slik de fremstår for oss
+   - Frihetens egen kausalitet: årsakens absolutte spontanitet
+   - Det kategoriske imperativ
+   - Rom og tid = anskuelsesformer
+
+** Gould (1941-2002)
+   ("Ikke nødvendigvis en vinge")
+   - Mener at naturens utvikling er tilfeldig og relativt uransakelig
+
+** Heisenberg (1901-1976)
+   ("Atomfysikk og kausallov")
+   - Statistisk lovmessighet
+
+** de Beauvoir (1908-1986)
+   ("Det annet kjønn")
+   - Vasallforhold: kvinnen under mannen
+   - Eksistensialisme
+   - Kvinnen som "den andre"
+   - Transcendens -> utvikle seg gjennom å sprenge grenser
+   - Immanens -> bli der man er
+   - Standpunktteorien -> forskning skal være ærligere og mer rettferdig
+     balansert. Noen mener at kvinner er bedre skikket til å beskrive
+     virkeligheten, nettopp fordi de er undertrykket og dermed i en bedre
+     posisjon til å se maktforholdene
+
+* Exphil II: Etikk
+  Etikk (gresk: etos): karakter, sedvane
+
+  Tre deler:
+  - metaetikk -> ser på etikken fra fugleperspektiv (forenklet: hva er etikk?)
+  - normativ etikk -> nærmere enn metaetikk (moralens grunnleggende prinsipp)
+  - anvendt etikk -> diskuterer konkrete problemstillinger (tre typer)
+
+** Feldman
+   ("Relativismen") -> tre timer
+   - Meningsrelativismen kan deles inn i en personlig og en sosial variant
+
+** Singer
+   ("Å ta liv: Embryoet og fosteret", "Alle dyr er likeverdige", "Miljøet")
+   - Utilitarisme
+   - Preferanseutilitarist
+   - Mening om abort: noen tilfeller
+   - Avviser dypøkologien
+
+** Smart
+   ("Riss av et system for en utilitaristisk etikk")
+   - En handling har:
+   - Handlingsutilitarist
+
+** Fried
+   ("Elementer")
+   - kontrafaktisk test
+   - "Rett" og "galt" som handlingsdirigerende
+   - Det rette har forrang fremfor det gode
+   - Kausalitet
+   - pliktetiker
+   - fan av Kant
+
+** Hursthouse
+   ("Dydsetikk og abort")
+   - Eudaimonia
+   - Det er ikke nødvendigvis moralsk rett å kreve sin rett
+   - En viss kunnskap kreves for å ta et valg
+
+** Friedmann
+   ("Feminisme i etikken")
+   - Dydsetikk
+   - Carol Gilligens "kvinneetikk" (omsorgsetikk)
+   - Mener at Kants tolkning av moralsk autonomi mangler den moralske
+     betydningen av følelser, relasjoner o.l.
+   - Bruker ofte uttrykket relasjonell eller sosial autonomi
+
+** Utilitarisme
+   - handlings-/regel-utilitarist (+ preferanse)
+   - nytte
+   - Konsekvensetikk
+
+** Deontologi
+   - det rette er å følge det som er man mener er grunnleggende riktig
+     handling, uavhengig av konsekvenser
+   - pliktetikk
+
+** Dydsetikk
+   - moralsk dom baserer seg på menneskets dyd (karakter)
+
+** Feministisk etikk
+   - kvinneetikk, omsorgsetikk
+
+** Eksistensialisme
+   -> frihet viktigst
+
+** Dawkins
+   - Hvem fant årsaken til menneskets eksistens? -> Darwin
+   - Menneske er født egoistiske og må lære altruisme (uselviskhet)
+
+** Arne Næss
+   -> dypøkologi
+        alt liv har verdi i seg selv, uavhengig av menneskelig nytteverdi
+
+** Bohr
+   -> kausalisk ... brudd i bølge
+   - forståelse av atomets struktur
+   - bølgemekanikk
+
+** Einstein
+   - relativitetsteorien
+
+** Carl von Linné (1707-1778)
+   - typologisk syn på arter
+   - biolog
+
+** Jean-Baptiste de Lamarck (1744-1829)
+   - Lamarckismen
+        De individene som strebet mot noe ble belønnet, bedre egenskaper hos
+        avkommet
+
+** Charles Robert Darwin (1809-1882)
+   - biolog
+   - starten på moderne biologi
+   - mekanismen/prinsippet naturlig seleksjon
+   - mennesket blir en del av naturen
+
+** Stamcellekloning
+   - diskutert i denne debatten:
+        celler til liv og liv til individ
+
+--------------------------------------------------------------------------------
+/END/
